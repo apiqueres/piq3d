@@ -62,7 +62,7 @@ p{color:#494949}
 /* TIMELINE */
 .steps{text-align:center}
 .steps h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:1rem}
-.steps ol{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;counter-reset:step;max-width:1100px;margin:0 auto}
+.steps ol{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;counter-reset:step;max-width:1100px;margin:0 auto;padding-left:0px;}
 .steps li{background:#fff;border-radius:20px;padding:1.2rem;box-shadow:0 10px 30px rgba(0,0,0,.05)}
 
 /* CTA FINAL */

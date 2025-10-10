@@ -1,28 +1,38 @@
-import { Directive, ElementRef, Input, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, Inject, OnDestroy, AfterViewInit } from '@angular/core';
+import { PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Directive({
-  selector: '[revealOnScroll]',
-  standalone: true
+  selector: '[revealOnScroll]'
 })
-export class RevealOnScrollDirective implements OnInit, OnDestroy {
-  @Input() revealClass = 'is-visible';
+export class RevealOnScrollDirective implements AfterViewInit, OnDestroy {
   private observer?: IntersectionObserver;
 
-  constructor(private el: ElementRef, private r: Renderer2) {}
+  constructor(
+    private el: ElementRef,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
-  ngOnInit() {
-    this.r.addClass(this.el.nativeElement, 'will-reveal');
-    this.observer = new IntersectionObserver(
-      entries => entries.forEach(e => {
-        if (e.isIntersecting) {
-          this.r.addClass(this.el.nativeElement, this.revealClass);
+  ngAfterViewInit() {
+    if (!isPlatformBrowser(this.platformId)) return; // ← clave: sólo en navegador
+
+    // También puedes chequear defensivamente:
+    if (typeof globalThis.IntersectionObserver === 'undefined') return;
+
+    this.observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          this.el.nativeElement.classList.add('reveal-in');
+          // si quieres observar una sola vez:
           this.observer?.unobserve(this.el.nativeElement);
         }
-      }),
-      { threshold: 0.15 }
-    );
+      }
+    }, { threshold: 0.1 });
+
     this.observer.observe(this.el.nativeElement);
   }
 
-  ngOnDestroy() { this.observer?.disconnect(); }
+  ngOnDestroy() {
+    this.observer?.disconnect();
+  }
 }

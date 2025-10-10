@@ -26,10 +26,10 @@ export class Inicio {
   }
 
   heroImages: HeroImg[] = [
-    { src: 'llaveros1.png', alt: 'Llavero camiseta personalizado' },
-    { src: 'vogan.png',     alt: 'Figura 3D perro Vogan' },
-    { src: 'colette.png',   alt: 'Figura 3D perro Colette' },
-    { src: 'pubmviman.png',    alt: 'Llaveros CD Arcadi' },
+    { src: 'assets/llaveros1.png', alt: 'Llavero camiseta personalizado' },
+    { src: 'assets/vogan.png',     alt: 'Figura 3D perro Vogan' },
+    { src: 'assets/colette.png',   alt: 'Figura 3D perro Colette' },
+    { src: 'assets/pubmviman.png',    alt: 'Llaveros CD Arcadi' },
   ].map(i => ({ ...i, ready: false }));
 
   onProbeLoad(ev: Event, i: number) {
