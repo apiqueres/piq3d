@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:piq3d": "node dist/piq3d/server/server.mjs",
-    "build:pages": "ng build --output-path docs --base-href /PIQ3D/ && xcopy /E /I /Y docs\\browser\\* docs\\ >NUL && copy /Y docs\\index.html docs\\404.html >NUL && rmdir /S /Q docs\\browser && rmdir /S /Q docs\\server"
+    "build:pages": "ng build --output-path docs --base-href /piq3d/ && xcopy /E /I /Y docs\\browser\\* docs\\ >NUL && copy /Y docs\\index.html docs\\404.html >NUL && rmdir /S /Q docs\\browser && rmdir /S /Q docs\\server"
   },
   "prettier": {
     "printWidth": 100,

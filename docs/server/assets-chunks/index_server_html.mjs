@@ -3,7 +3,7 @@ export default `<!doctype html>
 <head>
   <meta charset="utf-8">
   <title>Piq3d</title>
-  <base href="/PIQ3D/">
+  <base href="/piq3d/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="icon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +18,6 @@ export default `<!doctype html>
   <script>
   AOS.init();
 </script>
-<script src="main-7ZAINUSN.js" type="module"></script></body>
+<script src="main-UCAZQWTJ.js" type="module"></script></body>
 </html>
 `;

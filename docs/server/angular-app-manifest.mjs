@@ -2,29 +2,29 @@
 export default {
   bootstrap: () => import('./main.server.mjs').then(m => m.default),
   inlineCriticalCss: true,
-  baseHref: '/PIQ3D/',
+  baseHref: '/piq3d/',
   locale: undefined,
   routes: [
   {
     "renderMode": 2,
-    "redirectTo": "/PIQ3D/inicio",
-    "route": "/PIQ3D"
+    "redirectTo": "/piq3d/inicio",
+    "route": "/piq3d"
   },
   {
     "renderMode": 2,
-    "route": "/PIQ3D/inicio"
+    "route": "/piq3d/inicio"
   },
   {
     "renderMode": 2,
-    "redirectTo": "/PIQ3D",
-    "route": "/PIQ3D/**"
+    "redirectTo": "/piq3d/inicio",
+    "route": "/piq3d/**"
   }
 ],
   entryPointToBrowserMapping: undefined,
   assets: {
-    'index.csr.html': {size: 4446, hash: '756913d3ec614504bee91344e153cba0329cc8441d31a42276297d24677c152b', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
-    'index.server.html': {size: 4589, hash: 'd9ae50a7d05e46fe7e879f1eb891b478e962265fbe7bb4c88bf58dcfd6c3e948', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
-    'inicio/index.html': {size: 44488, hash: '9fa108c934b11ec315be888a72fea8525c72aff58d7fb64eb026312a3798e6da', text: () => import('./assets-chunks/inicio_index_html.mjs').then(m => m.default)},
+    'index.csr.html': {size: 4446, hash: '294ce127a56d3aed831b892087638b66289403078d81ae17bce7e615f724aea5', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
+    'index.server.html': {size: 4589, hash: '9f6a633771ba21dd19a40edca998bee34e89ace22806ac86a4c267105c714ae5', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
+    'inicio/index.html': {size: 44488, hash: '73434242b4f61af4f1f6ba81e64e2ff45325fbee06969b16e343862a2e4fcac2', text: () => import('./assets-chunks/inicio_index_html.mjs').then(m => m.default)},
     'styles-FC6WLD7C.css': {size: 405, hash: 'NGwIDlNzeI0', text: () => import('./assets-chunks/styles-FC6WLD7C_css.mjs').then(m => m.default)}
   },
 };

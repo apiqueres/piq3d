@@ -1,6 +1,6 @@
 {
   "routes": {
-    "/PIQ3D": {},
-    "/PIQ3D/inicio": {}
+    "/piq3d": {},
+    "/piq3d/inicio": {}
   }
 }
