@@ -1,0 +1,2 @@
+export default `body{background:linear-gradient(95deg,#fff2da,#f7ce81);font-family:Amatic SC,sans-serif;font-weight:600;font-style:normal;font-size:24px;color:#385069}@media screen and (max-width: 500px){.content{flex-direction:column;width:max-content}body{background:linear-gradient(95deg,#fff2da,#f7ce81)}.divider{height:1px;width:100%;background:var(--red-to-pink-to-purple-horizontal-gradient);margin-block:1.5rem}}
+`;

@@ -3,7 +3,7 @@ import { UnderConstructionComponent } from './under-construction/under-construct
 import { Inicio } from './inicio/inicio';
 
 export const routes: Routes = [
-    { path: '', component: UnderConstructionComponent },
+    { path: '', redirectTo: 'inicio' },
     { path: 'inicio', component: Inicio },
     { path: '**', redirectTo: '' }
 ];

@@ -1,4 +1,4 @@
-<!doctype html>
+export default `<!doctype html>
 <html lang="en" data-beasties-container="">
 <head>
   <meta charset="utf-8">
@@ -19,3 +19,4 @@
 </script>
 <script src="main-7ZAINUSN.js" type="module"></script></body>
 </html>
+`;
