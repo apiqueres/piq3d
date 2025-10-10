@@ -1,2 +1,41 @@
+<header class="navbar">
+  <div class="logo-menu">
+    <img src="logo.png" alt="Piq3D" height="75">
+  </div>
 
-<router-outlet />
+  <!-- Botón hamburguesa (solo visible en móvil) -->
+  <button class="menu-toggle"
+        (click)="menuOpen = !menuOpen"
+        [attr.aria-expanded]="menuOpen"
+        aria-controls="mainmenu"
+        aria-label="Abrir menú">☰</button>
+
+  <!-- Menú principal -->
+  <nav class="menu" [class.is-open]="menuOpen">
+    <a mat-button routerLink="/inicio" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+      Inicio
+    </a>
+    <a mat-button routerLink="/productos" routerLinkActive="active">
+      Productos
+    </a>
+    <a mat-button routerLink="/contacto" routerLinkActive="active">
+      ¡Pregúntanos!
+    </a>
+  </nav>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer class="footer footer--pill">
+  <div class="footer__inner">
+    <img src="logo.png" alt="Piq3D" height="36" class="footer__logo" />
+    <nav class="footer__links">
+      <a routerLink="/inicio" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Inicio</a>
+      <span>·</span>
+      <a routerLink="/productos" routerLinkActive="active">Productos</a>
+      <span>·</span>
+      <a routerLink="/contacto" routerLinkActive="active">¡Pregúntanos!</a>
+    </nav>
+    <div class="footer__copy">© 2025 Piq3D</div>
+  </div>
+</footer>
