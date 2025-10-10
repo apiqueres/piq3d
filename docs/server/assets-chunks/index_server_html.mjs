@@ -18,6 +18,6 @@ export default `<!doctype html>
   <script>
   AOS.init();
 </script>
-<script src="/piq3d/main-ZX74A23F.js" type="module"></script></body>
+<script src="/piq3d/main-XDI4FI2Y.js" type="module"></script></body>
 </html>
 `;
