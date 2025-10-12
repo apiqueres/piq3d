@@ -17,46 +17,28 @@
   </div>
 
   <!-- Galería con crossfade automático -->
-  <figure class="hero__art gallery">
+  <figure class="hero__art gallery crossfade">
     <ng-container *ngFor="let img of heroImages; let i = index">
-      <!-- 1) Pre-carga invisible para medir la imagen -->
-      <img
-        *ngIf="!img.ready"
-        [src]="img.src"
-        alt=""
-        (load)="onProbeLoad($event, i)"
-        style="position:absolute; visibility:hidden; width:0; height:0;"
-      />
+      <!-- 1) Probing oculto -->
+      <img *ngIf="!img.ready" [src]="img.src" alt="" (load)="onProbeLoad($event, i)"
+        style="position:absolute; visibility:hidden; width:0; height:0;" />
 
-      <!-- 2) Imagen optimizada + animación de fade-ciclo -->
-      <img
-        *ngIf="img.ready"
-        class="fade-cycle"
-        [style.--i]="i"
-        [ngSrc]="img.src"
-        [width]="img.w"
-        [height]="img.h"
-        [alt]="img.alt"
-        [priority]="i === 0"
-      />
+      <!-- 2) Imagen única a pantalla completa (apiladas con crossfade) -->
+      <img *ngIf="img.ready" class="fade-cycle" [style.--i]="i" [ngSrc]="img.src" [width]="img.w" [height]="img.h"
+        [alt]="img.alt" [priority]="i === 0" />
     </ng-container>
   </figure>
+
 </section>
-
-
 
 <!-- TIMELINE -->
 <section class="steps">
   <h2>Cómo trabajamos</h2>
   <ol style="list-style-type: none;">
-    <li data-aos="fade-up"
-     data-aos-duration="500"><strong>1.</strong> Nos mandas tu idea o foto</li>
-    <li data-aos="fade-down"
-    data-aos-duration="1000"><strong>2.</strong> Te proponemos el diseño 3D</li>
-    <li data-aos="fade-up"
-    data-aos-duration="1500"><strong>3.</strong> Imprimimos con precisión</li>
-    <li data-aos="fade-down"
-    data-aos-duration="2000"><strong>4.</strong> Te lo enviamos</li>
+    <li data-aos="fade-up" data-aos-duration="500"><strong>1.</strong> Nos mandas tu idea o foto</li>
+    <li data-aos="fade-down" data-aos-duration="1000"><strong>2.</strong> Te proponemos el diseño 3D</li>
+    <li data-aos="fade-up" data-aos-duration="1500"><strong>3.</strong> Imprimimos con precisión</li>
+    <li data-aos="fade-down" data-aos-duration="2000"><strong>4.</strong> Te lo enviamos</li>
   </ol>
 </section>
 
@@ -71,7 +53,7 @@
   </article>
 
   <article class="card" revealOnScroll>
-    <img ngSrc="assets/colette.png" width="1000" height="700" alt="Llavero mascota desde tu foto" />
+    <img ngSrc="assets/colette.png" width="500" height="500" alt="Llavero mascota desde tu foto" />
     <div class="txt">
       <h3>Mascotas</h3>
       <p>Con una foto haz un recuerdo de tu mascota. Tanto figurita como llavero</p>
@@ -79,7 +61,7 @@
   </article>
 
   <article class="card" revealOnScroll>
-    <img ngSrc="assets/llaveros1.png" width="1000" height="700" alt="Rótulos 3D y trofeos" />
+    <img ngSrc="assets/llaveros1.png" width="500" height="500" alt="Rótulos 3D y trofeos" />
     <div class="txt">
       <h3>Decor &amp; Trofeos</h3>
       <p>Rótulos con textura 3D y trofeos a medida para tus eventos.</p>
@@ -90,6 +72,6 @@
 
 <!-- CTA FINAL -->
 <section class="cta-final" revealOnScroll>
-  <h2>Convierte tu idea en una creación 3D</h2>
-  <a routerLink="/contacto" class="btn">Solicitar presupuesto</a>
+  <h2  data-aos="fade-right">Convierte tu idea en una creación 3D</h2>
+  <a routerLink="/contacto" class="btn"  data-aos="fade-left">Solicitar presupuesto</a>
 </section>

@@ -1,0 +1,50 @@
+/* CONTACTO */
+.contact{
+  background:#fff;
+  border-radius:26px;
+  margin:2rem 5rem;
+  text-align:center;
+}
+.contact__title{font-size:clamp(1.8rem,3.5vw,2.6rem);margin:0 0 .4rem}
+.contact__subtitle{max-width:60ch;margin:.2rem auto 1.2rem}
+
+.contact form{
+  max-width:980px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:1rem 1.2rem;
+  text-align:left;            /* los campos alineados a la izquierda */
+}
+
+.field{display:flex;flex-direction:column;gap:.35rem}
+.field label{font-weight:600}
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="tel"],
+.field input[type="file"],
+.field select,
+.field textarea{
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  padding:.85rem 1rem;
+  font:inherit;
+  background:#fff;
+}
+.field small{color:#6b7280}
+
+.full{grid-column:1 / -1}
+.inline{flex-direction:row;align-items:center}
+.inline .checkbox{display:flex;gap:.6rem;align-items:center}
+
+.actions{display:flex;gap:.6rem;justify-content:flex-start}
+.actions .btn{border-radius:20px}
+
+.hp{position:absolute;left:-9999px;visibility:hidden}
+
+/* Responsive */
+@media (max-width:900px){
+  .contact{margin:2rem}
+  .contact form{grid-template-columns:1fr}
+  .actions{justify-content:center}
+}

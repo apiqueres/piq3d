@@ -6,7 +6,7 @@ h1,h2,h3{line-height:1.05;letter-spacing:.2px}
 p{color:#494949}
 
 /* botones */
-.btn{display:inline-block;padding:.9rem 1.2rem;border-radius:999px;border:0;background:var(--ink);color:var(--accent);text-decoration:none}
+.btn{display:inline-block;padding:.9rem 1.2rem;border-radius:20px;border:0;background:var(--ink);color:var(--accent);text-decoration:none}
 .btn--ghost{background:transparent;border:1px solid var(--ink);color:var(--ink);margin-left:.6rem}
 .btn:hover{color:var(--ink);background:#72879c67}
 .btn--ghost:hover{color:#b45309;background:rgba(245,158,11,.15)}
@@ -16,26 +16,88 @@ p{color:#494949}
 .is-visible{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
 
 /* HERO */
-.hero{min-height:70svh;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:2.5rem;background:var(--bg);border-radius:2rem}
+.hero{min-height:75svh;display:grid;grid-template-columns:0.8fr 1.1fr;align-items:center;gap:.5rem;background:var(--bg);border-radius:2rem}
 .hero__copy h1 span{display:inline-block}
 .hero__copy h1{font-size:clamp(2.2rem,4vw,3.8rem);margin:0 0 1rem}
 .hero__copy p{font-size:clamp(1rem,1.4vw,1.2rem);margin-bottom:1.2rem}
 
 /* Galería estándar (mosaico) */
-.hero__art.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;align-items:center}
-.hero__art.gallery img{width:100%;height:auto;border-radius:1rem;object-fit:contain;background:#fff;padding:.5rem;box-shadow:0 6px 20px rgba(0,0,0,.08);transition:transform .25s ease,box-shadow .25s ease}
-.hero__art.gallery img:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
+/* El figure del arte ocupa todo el alto disponible del grid */
+.hero__art{
+  align-self: stretch;        /* <-- clave para que el figure crezca en la celda */
+  justify-self: stretch;
+}
+
+/* Galería estándar (mosaico) SOLO cuando NO sea crossfade */
+.hero__art.gallery:not(.crossfade){
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1rem;
+  align-items:center;
+}
+.hero__art.gallery:not(.crossfade) img{
+  width:100%;
+  height:auto;
+  border-radius:1rem;
+  object-fit:contain;
+  background:#fff;
+  padding:.5rem;
+  box-shadow:0 6px 20px rgba(0,0,0,.08);
+  transition:transform .25s ease,box-shadow .25s ease
+}
+.hero__art.gallery:not(.crossfade) img:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(0,0,0,.12)
+}
+
+/* Galería crossfade a pantalla completa dentro del figure */
+.hero__art.gallery.crossfade {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+/* Todas las imágenes apiladas ocupan TODO el figure */
+.hero__art.gallery.crossfade img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* 👈 cambio clave: mostrar completa la imagen */
+  object-position: center;
+  border-radius: 0;
+  background: #fff;      /* mantiene un fondo limpio detrás */
+  padding: 0;
+  box-shadow: none;
+}
+
+/* Mantén tu animación: solo una visible a la vez con un pequeño solape */
+.fade-cycle{
+  opacity:0;
+  animation:fadeCycle 12s infinite ease-in-out;
+  animation-delay:calc(var(--i)*3s);
+}
+/* @keyframes fadeCycle permanece como lo tienes */
 
 /* Slider */
 .hero__slider{display:flex;gap:1rem;overflow:hidden;width:100%;justify-content:center;position:relative;animation:scrollSlider 12s linear infinite}
 .hero__slider img{border-radius:1rem;width:250px;height:auto;object-fit:cover}
 
 /* Galería variante crossfade */
-.hero__art.gallery.crossfade{position:relative;place-items:center;width:min(420px,40vw);aspect-ratio:3/4;max-height:520px;margin-inline:auto}
-.hero__art.gallery.crossfade img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:1rem;background:#fff;padding:.5rem;box-shadow:0 6px 20px rgba(0,0,0,.08)}
-.hero__art.gallery.crossfade img.parallax{position:static!important;transform:none!important}
-.fade-cycle{opacity:0;animation:fadeCycle 16s infinite ease-in-out;animation-delay:calc(var(--i)*4s)}
-@keyframes fadeCycle{0%{opacity:0}6%{opacity:1}19%{opacity:1}25%{opacity:0}100%{opacity:0}}
+@keyframes fadeCycle {
+  0%   { opacity: 0; }
+  8%   { opacity: 1; }
+  28%  { opacity: 1; }
+  35%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
 
 /* Entradas desde la izquierda */
 .line-in-left{opacity:0;transform:translateX(-32px);animation:lineInLeft .7s ease-out forwards}
@@ -46,11 +108,43 @@ p{color:#494949}
 .parallax{transform:translateY(calc(var(--parallaxY,0)*18px));will-change:transform}
 
 /* COLECCIONES */
-.collections{display:grid;gap:2rem;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:4rem}
-.card{background:#fff;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,.06);overflow:hidden}
-.card img{width:100%;height:auto;display:block}
-.card .txt{padding:1.2rem 1.4rem}
-.card h3{margin:.2rem 0}
+.collections{
+  display:grid;
+  gap:2rem;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  margin-top:4rem;
+}
+
+.card{
+  background:#fff;
+  border-radius:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+  overflow:hidden;
+  max-height:35rem;
+
+  /* centrar contenido y mantener orden vertical */
+  display:flex;
+  flex-direction:column;
+  align-items:center;     /* centra la img y el contenido horizontalmente */
+  text-align:center;      /* centra los textos */
+}
+
+.card img{
+  width:70%;
+  height:auto;
+  display:block;
+  margin:0 auto;          /* centrado horizontal extra por si cambia el layout */
+  object-fit:contain;     /* evita recortes si limitas alturas en el futuro */
+}
+
+.card .txt{
+  padding:1.2rem 1.4rem;
+  width:100%;             /* que el bloque de texto ocupe todo el ancho */
+}
+
+.card h3{
+  margin:.2rem 0;
+}
 
 /* SHOWCASE */
 .showcase{margin-top:2rem;display:flex;flex-direction:column;gap:4rem}
@@ -66,8 +160,11 @@ p{color:#494949}
 .steps li{background:#fff;border-radius:20px;padding:1.2rem;box-shadow:0 10px 30px rgba(0,0,0,.05)}
 
 /* CTA FINAL */
-.cta-final{text-align:center;background:linear-gradient(135deg,#70b0f0,#c1d8ee 60%,#70b0f0);color:#1b1b1b;border-radius:26px}
+.cta-final{text-align:center;background:#fff;border-radius:26px; margin: 2rem 5rem}
 .cta-final h2{font-size:clamp(1.8rem,3.5vw,2.6rem);margin:0 0 1rem}
+.cta-final a{color:#ff9f1a;}
+.cta-final a:hover{color:var(--ink);background:#72879c67}
+
 
 /* accesibilidad */
 @media (prefers-reduced-motion:reduce){
@@ -76,14 +173,34 @@ p{color:#494949}
 
 /* responsive */
 @media (max-width:900px){
-  .hero{grid-template-columns:1fr;min-height:auto}
-  .hero__art.gallery.crossfade{width:min(320px,70vw);aspect-ratio:1/1}
+  .hero{grid-template-columns:1fr;min-height:auto; gap: .5rem;}
+  .hero__art.gallery.crossfade{ width: min(320px, 25vw);
+    aspect-ratio: 1 / 1;       /* cuadrada en tablets/móviles */
+    min-height: auto;
+    margin-inline: auto;}
+    .hero__copy{text-align:center}
+  .card p{ padding: 0 1rem;}
+
+  .cta-final{text-align:center;background:#fff;border-radius:26px; margin: 2rem}
+  .cta-final h2{font-size:clamp(1.8rem,3.5vw,2.6rem);margin:0 0 1rem}
+  .cta-final a{color:var(--accent);}
+  .cta-final a:hover{color:var(--ink);background:#72879c67}
+
 }
 @media (max-width:500px){
   .hero,.panel{grid-template-columns:1fr}
   .collections{grid-template-columns:1fr}
   .steps ol{grid-template-columns:1fr 1fr;padding-left:0}
   .hero__art.gallery{grid-template-columns:1fr}
+
+  .hero__art.gallery.crossfade {
+    width: 50vw;
+    aspect-ratio: 1 / 1;       /* más grande y centrada */
+  }
+
+  .hero__art.gallery.crossfade img {
+    object-fit: contain;
+  }
 }
 
 /* keyframes extra */

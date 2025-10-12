@@ -1,0 +1,85 @@
+<!-- CONTACTO -->
+<section class="contact" id="contacto" revealOnScroll>
+  <h2 class="contact__title">¿Hablamos?</h2>
+  <p class="contact__subtitle">
+    Cuéntame tu idea y te respondo con un boceto y presupuesto.
+  </p>
+
+  <form     novalidate>
+    <!-- Nombre -->
+    <div class="field">
+      <label for="nombre">Nombre*</label>
+      <input id="nombre" name="nombre" type="text" required
+             placeholder="Tu nombre"
+              />
+    </div>
+
+    <!-- Email -->
+    <div class="field">
+      <label for="email">Email*</label>
+      <input id="email" name="email" type="email" required
+             placeholder="tucorreo@ejemplo.com"
+              />
+    </div>
+
+    <!-- Teléfono -->
+    <div class="field">
+      <label for="telefono">Teléfono</label>
+      <input id="telefono" name="telefono" type="tel"
+             placeholder="+34 600 000 000"
+              />
+    </div>
+
+    <!-- Producto de interés -->
+    <div class="field">
+      <label for="producto">Producto</label>
+      <select id="producto" name="producto" >
+        <option value="">Elige una opción</option>
+        <option>Llavero personalizado</option>
+        <option>Llavero logo</option>
+        <option>Figura mascota</option>
+        <option>Trofeo (estándar / medio / mini / micro)</option>
+        <option>Medallas</option>
+        <option>Nombre personalizado</option>
+        <option>Marco retroiluminado</option>
+        <option>Figura decorativa</option>
+        <option>Otro</option>
+      </select>
+    </div>
+
+    <!-- Descripción -->
+    <div class="field full">
+      <label for="mensaje">Descripción de la idea*</label>
+      <textarea id="mensaje" name="mensaje" rows="5" required
+                placeholder="Cuéntame colores, medidas, cantidad, fecha…"
+                ></textarea>
+    </div>
+
+    <!-- Adjuntar imagen (opcional) -->
+    <div class="field full">
+      <label for="archivo">Adjuntar imagen (opcional)</label>
+      <input id="archivo" name="archivo" type="file" accept="image/*" />
+      <small>Formatos: JPG, PNG • máx. 5MB</small>
+    </div>
+
+    <!-- Consentimiento -->
+    <div class="field full inline">
+      <label class="checkbox">
+        <input type="checkbox" name="consent" required ="contact.consent" />
+        Acepto que me contactes para este presupuesto.*
+      </label>
+    </div>
+
+    <!-- Honeypot anti-spam (oculto) -->
+    <div class="hp">
+      <label for="web">Tu web</label>
+      <input id="web" name="web" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <!-- Botón -->
+    <div class="actions full">
+      <button class="btn" type="submit" >Solicitar presupuesto</button>
+      <a class="btn btn--ghost" href="mailto:tuemail@dominio.com">Escríbeme por email</a>
+    </div>
+  </form>
+</section>
