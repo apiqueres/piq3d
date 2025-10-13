@@ -12,8 +12,10 @@ body{
 
   @media screen and (max-width: 500px) {
     .content {
-      flex-direction: column;
-      width: max-content;
+        flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
     }
 
     body{
