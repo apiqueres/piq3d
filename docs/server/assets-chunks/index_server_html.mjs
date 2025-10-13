@@ -18,6 +18,6 @@ export default `<!doctype html>
   <script>
   AOS.init();
 </script>
-<script src="main-4XM443TS.js" type="module"></script></body>
+<script src="main-7MISIFRZ.js" type="module"></script></body>
 </html>
 `;
