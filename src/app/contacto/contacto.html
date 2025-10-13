@@ -5,10 +5,10 @@
     Cuéntame tu idea y te respondo con un boceto y presupuesto.
   </p>
 
-  <form 
+  <form
   action="https://formsubmit.co/alejandropiqueres01@gmail.com"
   method="POST"
-  enctype="multipart/form-data" validate
+  enctype="multipart/form-data"e
 >
   <!-- Nombre -->
   <div class="field">
@@ -108,27 +108,31 @@
   <span class="ctrl__label">Acepto que me contactes por WhatsApp.</span>
 </label>
 
-  <!-- Honeypot anti-spam -->
+ <!-- Honeypot anti-spam -->
   <input type="text" name="_honey" style="display:none" />
 
-  <!-- Configuración FormSubmit -->
-  <input type="hidden" name="_next" routerLink="/gracias"/>
-  <input type="hidden" name="_captcha" value="false">
+  <!-- ✅ Redirección tras enviar: URL ABSOLUTO -->
+  <input type="hidden" name="_next" value="https://apiqueres.github.io/piq3d/gracias" />
 
-  <!-- Botones -->
+  <!-- ✅ Desactiva el captcha de FormSubmit si quieres -->
+  <input type="hidden" name="_captcha" value="false" />
+
+  <!-- (Opcional) Asunto y plantilla del mail -->
+  <input type="hidden" name="_subject" value="Nuevo presupuesto desde la web" />
+  <input type="hidden" name="_template" value="box" />
+
   <div class="actions full">
     <input
       id="enviar_form"
       class="btn btn--ghost"
       type="submit"
       value="Solicitar presupuesto"
-      style="font-size: 1.5rem; font-style: normal; font-weight: 600;"
+      style="font-size:1.5rem;font-style:normal;font-weight:600;"
     />
-    <a class="btn btn--ghost" style="text-align: center;"
-      href="https://wa.me/34623754444?text=Hola%20%2C%20me%20gustar%C3%ADa%20pedirte%20un%20presupuesto.%0A%0A%20·%20Producto%3A%20%5Bespecifica%20aqu%C3%AD%20el%20producto%20o%20idea%5D%0A·%20Detalles%3A%20colores%2C%20medidas%2C%20cantidad%2C%20fecha...%0A%20·%20Adjunto%20im%C3%A1genes%3A%20(si%20las%20hay)%0A%0A%C2%A1Gracias!%20Espero%20tu%20respuesta%20"
-  
-      target="_blank"
-    >¡Pregúntanos por WhatsApp!</a>
+    <!-- Este enlace de WhatsApp bien, no afecta al submit -->
+    <a class="btn btn--ghost" style="text-align:center"
+       href="https://wa.me/34623754444?text=Hola%20%2C%20me%20gustar%C3%ADa%20pedirte%20un%20presupuesto.%0A%0A%20·%20Producto%3A%20%5Bespecifica%20aqu%C3%AD%20el%20producto%20o%20idea%5D%0A·%20Detalles%3A%20colores%2C%20medidas%2C%20cantidad%2C%20fecha...%0A%20·%20Adjunto%20im%C3%A1genes%3A%20(si%20las%20hay)%0A%0A%C2%A1Gracias!%20Espero%20tu%20respuesta%20"
+       target="_blank">¡Pregúntanos por WhatsApp!</a>
   </div>
 </form>
 

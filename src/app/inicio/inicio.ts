@@ -2,6 +2,7 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, HostListener, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { RevealOnScrollDirective } from '../directives/reveal-on-scroll.directive';
+import * as AOS from 'aos';
 type HeroImg = { src: string; alt: string; w?: number; h?: number; ready?: boolean };
 
 @Component({
@@ -37,5 +38,20 @@ export class Inicio {
     const w = img.naturalWidth || 800;
     const h = img.naturalHeight || 800;
     this.heroImages[i] = { ...this.heroImages[i], w, h, ready: true };
+  }
+
+   ngOnInit(): void {
+    // Refresca AOS por si había animaciones anteriores
+    AOS.refreshHard();
+  }
+
+  ngAfterViewInit(): void {
+    // Inicializa AOS cuando el componente se muestra
+    setTimeout(() => {
+      AOS.init({
+        duration: 1000, // Duración por defecto
+        once: false     // 👈 Permite que las animaciones se repitan al volver al componente
+      });
+    });
   }
 }
