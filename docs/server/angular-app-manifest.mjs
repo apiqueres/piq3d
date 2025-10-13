@@ -34,12 +34,12 @@ export default {
 ],
   entryPointToBrowserMapping: undefined,
   assets: {
-    'index.csr.html': {size: 4328, hash: '4092e78af5f25d15ca033f2f8fa4aa819eccf83e6ddb3a41e0975388e3756af5', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
-    'index.server.html': {size: 4471, hash: '4c9617f297babf6c17145cc104c94482896525dbcf98b231636bb309391262c5', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
-    'inicio/index.html': {size: 46383, hash: 'a0f59ff8f49f042589688b2f4d6ce30e0b728daca9d45ef06cf201136eb3764e', text: () => import('./assets-chunks/inicio_index_html.mjs').then(m => m.default)},
-    'contacto/index.html': {size: 46704, hash: '8367347b741a4d4b13ad9b65430007847ac9ceaae1cffc372c180d88a90b8211', text: () => import('./assets-chunks/contacto_index_html.mjs').then(m => m.default)},
-    'productos/index.html': {size: 49838, hash: 'fa5a2e58e78bb57477bc74b0e8ec530aadc697a667753d700b3915491a9455a1', text: () => import('./assets-chunks/productos_index_html.mjs').then(m => m.default)},
-    'gracias/index.html': {size: 37552, hash: 'e4dc243b95cad92d41f91d1041676994661cc638b7efc1853b50ca7975a91728', text: () => import('./assets-chunks/gracias_index_html.mjs').then(m => m.default)},
+    'index.csr.html': {size: 4328, hash: '96842657d050d7032b18845d7da1591f3a6bbf0e4cbe596a3ecffe1a775d691f', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
+    'index.server.html': {size: 4471, hash: '26424e64faf6a0afbca68f30d3c5f3c941b0e75c6d8c49a6be0c6483926f3351', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
+    'contacto/index.html': {size: 46643, hash: '09a81eb78ed8fdbc883293f608b9749a9faaa82c7d213dae92e4ffd99589c5be', text: () => import('./assets-chunks/contacto_index_html.mjs').then(m => m.default)},
+    'inicio/index.html': {size: 46383, hash: '29cd1a99e3010884c446144fa8922a5d793c8e48c74ed2526d38c22dfcdb88d5', text: () => import('./assets-chunks/inicio_index_html.mjs').then(m => m.default)},
+    'gracias/index.html': {size: 37552, hash: 'c18f974edbdd390a9fdd199d5be715f5937a0794b8155ed1fef81a55e8123520', text: () => import('./assets-chunks/gracias_index_html.mjs').then(m => m.default)},
+    'productos/index.html': {size: 49838, hash: '94bd16fd1818ec7b9fdb96a284f850307b1df5248ba0f80c332976f7d7342c67', text: () => import('./assets-chunks/productos_index_html.mjs').then(m => m.default)},
     'styles-ROYJKWSH.css': {size: 26484, hash: 'gFniEUtcHaE', text: () => import('./assets-chunks/styles-ROYJKWSH_css.mjs').then(m => m.default)}
   },
 };
