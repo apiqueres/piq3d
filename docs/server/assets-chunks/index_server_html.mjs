@@ -16,6 +16,6 @@ export default `<!doctype html>
 </script>
   <app-root></app-root>
  
-<script src="scripts-7MNLW4NL.js" defer=""></script><script src="main-2QKCOEFW.js" type="module"></script></body>
+<script src="scripts-7MNLW4NL.js" defer=""></script><script src="main-FDRLBKNR.js" type="module"></script></body>
 </html>
 `;

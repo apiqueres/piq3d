@@ -5,7 +5,8 @@
     Cuéntame tu idea y te respondo con un boceto y presupuesto.
   </p>
 
-  <form action="https://formsubmit.co/alejandropiqueres01@gmail.com" method="POST" enctype="multipart/form-data">
+  <!-- quitamos action/method; EmailJS maneja el envío -->
+  <form (submit)="sendEmail($event)" enctype="multipart/form-data" novalidate>
 
     <!-- Nombre -->
     <div class="field">
@@ -22,17 +23,27 @@
     <!-- Teléfono -->
     <div class="field">
       <label for="telefono">Teléfono (¿Hablamos por whatsapp?)</label>
-      <input id="telefono" name="telefono" type="tel" placeholder="+34 XXX XXX XXX" autocomplete="tel"
-        inputmode="tel" />
+      <input id="telefono" name="telefono" type="tel" placeholder="+34 XXX XXX XXX" autocomplete="tel" inputmode="tel" />
     </div>
 
     <!-- Producto -->
     <div class="field producto-field">
-      <!-- Usamos aria-labelledby para el combobox custom -->
       <span id="producto-label" class="field__label">Producto *</span>
-      <div class="cs" [class.cs--open]="csOpen" (click)="toggleCs()" tabindex="0" id="producto-fake" role="combobox"
-        aria-expanded="{{ csOpen }}" aria-haspopup="listbox" aria-controls="cs-listbox" aria-labelledby="producto-label"
-        aria-autocomplete="list">
+
+      <!-- valor real que se envía con el form -->
+      <input type="hidden" name="producto" [value]="producto" />
+
+      <div class="cs"
+           [class.cs--open]="csOpen"
+           (click)="toggleCs()"
+           tabindex="0"
+           id="producto-fake"
+           role="combobox"
+           aria-expanded="{{ csOpen }}"
+           aria-haspopup="listbox"
+           aria-controls="cs-listbox"
+           aria-labelledby="producto-label"
+           aria-autocomplete="list">
 
         <span class="cs__value">{{ selectedLabel || 'Elige una opción' }}</span>
         <svg class="cs__chev" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
@@ -41,8 +52,12 @@
       </div>
 
       <ul *ngIf="csOpen" id="cs-listbox" class="cs__panel" role="listbox">
-        <li *ngFor="let o of opcionesProducto; let i = index" class="cs__option" role="option" [id]="'opt-' + i"
-          [attr.aria-selected]="o.value === producto" (click)="selectOption(o)">
+        <li *ngFor="let o of opcionesProducto; let i = index"
+            class="cs__option"
+            role="option"
+            [id]="'opt-' + i"
+            [attr.aria-selected]="o.value === producto"
+            (click)="selectOption(o)">
           {{ o.label }}
         </li>
       </ul>
@@ -51,24 +66,27 @@
     <!-- Descripción -->
     <div class="field full">
       <label for="mensaje">Descripción de la idea*</label>
-      <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Cuéntame colores, medidas, cantidad, fecha…"
-        autocomplete="off"></textarea>
+      <textarea id="mensaje" name="mensaje" rows="5" required
+                placeholder="Cuéntame colores, medidas, cantidad, fecha…" autocomplete="off"></textarea>
     </div>
 
-    <!-- Adjuntar imágenes -->
+    <!-- Adjuntar imágenes (EmailJS: usa name='my_file' para adjuntos) -->
     <div class="field full adjuntar-img">
       <label for="file-upload" class="btn btn--ghost">📎 Adjuntar imágenes</label>
-      <input id="file-upload" type="file" name="archivos" multiple accept="image/*"
-        (change)="onFilesSelected($event)" />
-
+      <input id="file-upload"
+             type="file"
+             name="my_file"            
+             multiple
+             accept="image/*"
+             (change)="onFilesSelected($event)" />
       <ul id="file-list">
         @for (name of fileNames; track $index) {
-        <li>📷 {{ name }}</li>
+          <li>📷 {{ name }}</li>
         }
       </ul>
     </div>
 
-    <!-- Consentimiento (obligatorio) -->
+    <!-- Consentimiento -->
     <label class="checkbox ctrl">
       <input type="checkbox" name="consentimiento" value="si" required />
       <span class="ctrl__box" aria-hidden="true"></span>
@@ -82,25 +100,15 @@
       <span class="ctrl__label">Acepto que me contactes por WhatsApp.</span>
     </label>
 
-    <!-- Honeypot anti-spam (oculto de verdad para accesibilidad) -->
+    <!-- Honeypot anti-spam -->
     <input type="text" name="_honey" autocomplete="off" tabindex="-1" hidden aria-hidden="true" />
-
-    <!-- ✅ Redirección tras enviar: URL ABSOLUTO -->
-    <input type="hidden" name="_next" value="https://apiqueres.github.io/piq3d/gracias" />
-
-    <!-- ✅ Desactiva el captcha de FormSubmit si quieres -->
-    <input type="hidden" name="_captcha" value="false" />
-
-    <!-- (Opcional) Asunto y plantilla del mail -->
-    <input type="hidden" name="_subject" value="Nuevo presupuesto desde la web" />
-    <input type="hidden" name="_template" value="box" />
 
     <div class="actions full">
       <input id="enviar_form" class="btn btn--ghost" type="submit" value="Solicitar presupuesto"
-        style="font-size:1.5rem;font-style:normal;font-weight:600;" />
+             style="font-size:1.5rem;font-style:normal;font-weight:600;" />
       <a class="btn btn--ghost" style="text-align:center"
-        href="https://wa.me/34623754444?text=Hola%20%2C%20me%20gustar%C3%ADa%20pedirte%20un%20presupuesto.%0A%0A%20·%20Producto%3A%20%5Bespecifica%20aqu%C3%AD%20el%20producto%20o%20idea%5D%0A·%20Detalles%3A%20colores%2C%20medidas%2C%20cantidad%2C%20fecha...%0A%20·%20Adjunto%20im%C3%A1genes%3A%20(si%20las%20hay)%0A%0A%C2%A1Gracias!%20Espero%20tu%20respuesta%20"
-        target="_blank">¡Pregúntanos por WhatsApp!</a>
+         href="https://wa.me/34623754444?text=Hola%20%2C%20me%20gustar%C3%ADa%20pedirte%20un%20presupuesto.%0A%0A%20·%20Producto%3A%20%5Bespecifica%20aqu%C3%AD%20el%20producto%20o%20idea%5D%0A·%20Detalles%3A%20colores%2C%20medidas%2C%20cantidad%2C%20fecha...%0A%20·%20Adjunto%20im%C3%A1genes%3A%20(si%20las%20hay)%0A%0A%C2%A1Gracias!%20Espero%20tu%20respuesta%20"
+         target="_blank">¡Pregúntanos por WhatsApp!</a>
     </div>
   </form>
 </section>
