@@ -5,15 +5,51 @@
 }
 
 /* Base */
-section{padding:clamp(1rem,1vw,4rem) 5vw}
+section{padding:clamp(.5rem,.5vw,3rem) 5vw}
 h1,h2,h3{line-height:1.05;letter-spacing:.2px}
 p{color:#494949}
+h2{
+  padding: 0.9rem 0;
+  font-size: 2.5rem;
+  margin-bottom: 0px;
+}
+.cta-final{
+  a{margin-left: 0; color: #ff9f1a}
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem;
+  border-radius: 20px;
+  border: 0;
+  background: var(--ink);
+  color: var(--accent);
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn--ghost {
+  background: transparent;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+}
+
+.btn:hover {
+  color: var(--ink);
+  background: #72879c67;
+}
+
+.btn--ghost:hover {
+  color: #b45309;
+  background: rgba(245, 158, 11, 0.15);
+}
 
 /* COLECCIONES (cards) */
 .collections{
   display:grid;gap:1rem;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  margin-top:4rem;
+  margin-top:2rem;
 }
 .card{
   background:#fff;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,.06);
@@ -23,8 +59,63 @@ p{color:#494949}
 .card img{
   width:40%;height:auto;display:block;margin:0 auto;object-fit:contain;
 }
-.card .txt{padding:1.2rem 1.4rem;width:100%}
+.card .txt{padding:1.2rem 1.4rem;width:100%; 
+P{padding: 0 0.5rem;}}
 .card h3{margin:.2rem 0}
+
+/* Contenedor de la imagen en la card */
+.card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* se adapta, cuadrado como tu 500x500 */
+  overflow: hidden;
+  border-radius: 16px;
+  background: #fff;
+}
+
+/* Imágenes apiladas para el crossfade */
+.card__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+  opacity: 0;            /* parten ocultas */
+  display: block;
+}
+
+/* Crossfade: igual filosofía que el hero */
+.gallery.crossfade {
+  --dur: 8s;            /* duración total del ciclo */
+  --fade: 1000ms;         /* duración de la transición */
+}
+
+/* Cada imagen recibe un delay relativo a su índice */
+.gallery.crossfade .fade-cycle {
+  animation: xfade var(--dur) linear infinite;
+  animation-delay: calc(var(--i) * (var(--dur) / var(--count)));
+}
+
+/* Ventana de visibilidad por imagen dentro del ciclo */
+@keyframes xfade {
+  /* visible del 0% al ~30%, fade out hasta 40%, resto oculta */
+  0%   { opacity: 1; }
+  30%  { opacity: 1; }
+  40%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Reduce motion: muestra solo la primera imagen sin animar */
+@media (prefers-reduced-motion: reduce) {
+  .gallery.crossfade .fade-cycle {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+  .gallery.crossfade .fade-cycle:not(:first-child) {
+    display: none;
+  }
+}
+
 
 
 
@@ -41,7 +132,12 @@ p{color:#494949}
 }
 
 @media (max-width:500px){
-  .collections{grid-template-columns:1fr}
+  .collections{grid-template-columns:1fr;  margin-top:1rem;}
+  
+  .cta-final{text-align:center; 
+  a{margin-left: 0; color:#b45309;background:rgba(245,158,11,.15);}}
+  
+
 }
 
 /* Extra */

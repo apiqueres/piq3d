@@ -1,0 +1,24 @@
+<section class="thanks" role="status" aria-live="polite">
+  <div class="thanks__icon" aria-hidden="true">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <h1 class="thanks__title">¡Gracias por tu mensaje!</h1>
+  <p class="thanks__subtitle">
+    Hemos recibido tu formulario. En <strong>Piq3D</strong> nos pondremos en contacto contigo lo antes posible.
+  </p>
+
+  <p class="thanks__meta">
+    Referencia: <strong>{{ referencia }}</strong> · {{ fechaHora }}
+  </p>
+
+  <div class="actions" role="group" aria-label="Acciones">
+    <button class="btn btn--ghost" type="button" (click)="volverInicio()">Volver al inicio</button>
+  </div>
+
+  <footer class="thanks__foot">
+    Si necesitas añadir más detalles o archivos, responde al email de confirmación que recibirás en breve.
+  </footer>
+</section>

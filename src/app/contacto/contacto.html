@@ -29,32 +29,45 @@
   </div>
 
   <!-- Producto -->
-  <div class="field producto-field">
-  <label for="producto-fake">Producto *</label>
+  <!-- Producto -->
+<div class="field producto-field">
+  <!-- el label ya NO lleva 'for', pero tiene un id -->
+  <label id="producto-label">Producto *</label>
 
   <!-- valor real que envía el formulario -->
   <input type="hidden" name="producto" [value]="producto" required>
 
-  <!-- selector custom -->
-  <div class="cs" [class.cs--open]="csOpen" (click)="toggleCs()" tabindex="0" id="producto-fake"
-       role="combobox" aria-expanded="{{csOpen}}" aria-haspopup="listbox" aria-controls="cs-listbox">
+  <!-- combobox custom -->
+  <div
+    class="cs"
+    [class.cs--open]="csOpen"
+    (click)="toggleCs()"
+    tabindex="0"
+    id="producto-fake"
+    role="combobox"
+    aria-expanded="{{ csOpen }}"
+    aria-haspopup="listbox"
+    aria-controls="cs-listbox"
+    aria-labelledby="producto-label"  
+  >
     <span class="cs__value">{{ selectedLabel || 'Elige una opción' }}</span>
     <svg class="cs__chev" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
     </svg>
   </div>
 
-  <!-- panel -->
   <ul *ngIf="csOpen" id="cs-listbox" class="cs__panel" role="listbox">
     <li *ngFor="let o of opcionesProducto; let i = index"
         class="cs__option"
         role="option"
+        [id]="'opt-' + i"
         [attr.aria-selected]="o.value === producto"
         (click)="selectOption(o)">
       {{ o.label }}
     </li>
   </ul>
 </div>
+
 
 
   <!-- Descripción -->
@@ -99,7 +112,7 @@
   <input type="text" name="_honey" style="display:none" />
 
   <!-- Configuración FormSubmit -->
-  <input type="hidden" name="_next" value="http://localhost:4200/" />
+  <input type="hidden" name="_next" routerLink="/gracias"/>
   <input type="hidden" name="_captcha" value="false">
 
   <!-- Botones -->

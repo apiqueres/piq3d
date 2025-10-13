@@ -10,6 +10,7 @@ p{color:#494949}
 .btn--ghost{background:transparent;border:1px solid var(--ink);color:var(--ink);margin-left:.6rem}
 .btn:hover{color:var(--ink);background:#72879c67}
 .btn--ghost:hover{color:#b45309;background:rgba(245,158,11,.15)}
+.btn-activo{color:#ff9f1a; }
 
 /* reveal */
 .will-reveal{opacity:0;transform:translateY(24px) scale(.98);filter:blur(4px);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.6,.2,1),filter .8s}

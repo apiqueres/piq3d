@@ -1,0 +1,59 @@
+:host {
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.thanks {
+  background: #fff;
+  border-radius: 26px;
+  padding: 2rem 1.5rem;
+  width: min(92vw, 720px);
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+  color: var(--ink);
+}
+
+.thanks__icon {
+  width: 64px; height: 64px; margin: 0 auto 1rem;
+  display: grid; place-items: center;
+  border-radius: 14px; border: 2px solid var(--ink);
+  background: rgba(245,158,11,.12);
+}
+
+.thanks__title {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  margin: .25rem 0 .5rem;
+}
+
+.thanks__subtitle {
+  max-width: 60ch;
+  margin: 0 auto 1.25rem;
+  color: #475569;
+}
+
+.thanks__meta {
+  font-size: .95rem;
+  color: #64748b;
+  margin: .25rem 0 1.5rem;
+}
+
+.actions { display: flex; gap: .6rem; justify-content: center; flex-wrap: wrap; }
+
+
+.thanks__foot {
+  margin-top: 1.5rem;
+  font-size: .9rem;
+  color: #94a3b8;
+}
+.btn{display:inline-block;padding:.9rem 1.2rem;border-radius:20px;border:0;background:var(--ink);color:var(--accent);text-decoration:none}
+.btn--ghost{background:transparent;border:1px solid var(--ink);color:var(--ink);margin-left:.6rem; font-family: inherit; font-size: inherit; font-weight: inherit;}
+.btn:hover{color:var(--ink);background:#72879c67}
+.btn--ghost:hover{color:#b45309;background:rgba(245,158,11,.15)}
+
+
+@media (max-width: 600px) {
+  :host { padding: 1rem; }
+  .thanks { padding: 1.5rem 1rem; }
+  .btn--ghost{ margin-left: 0; color:#b45309;background:rgba(245,158,11,.15);}
+}
