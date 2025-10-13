@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener,ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -63,5 +63,11 @@ constructor(private el: ElementRef) {}
 @HostListener('document:click', ['$event'])
 onDocClick(ev: Event) {
   if (!this.el.nativeElement.contains(ev.target)) this.csOpen = false;
+}
+@ViewChild('formRef') formRef!: ElementRef<HTMLFormElement>;
+
+forceNativeSubmit() {
+  // Envía sin pasar por listeners ni validación extra
+  this.formRef.nativeElement.submit();
 }
 }

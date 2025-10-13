@@ -1,7 +1,9 @@
 export default `<!doctype html>
 <html lang="en" data-beasties-container="">
 <head>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https:; connect-src 'self' https:; form-action 'self' https://formsubmit.co https://httpbin.org; navigate-to 'self' https://formsubmit.co https://httpbin.org; object-src 'none'; base-uri 'self';">
   <meta charset="utf-8">
+  <!-- index.html -->
   <title>Piq3d</title>
   <base href="/piq3d/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,6 +15,6 @@ export default `<!doctype html>
 <body ngcm="">
   <app-root></app-root>
  
-<script src="scripts-7MNLW4NL.js" defer=""></script><script src="main-J4PZZJ7C.js" type="module"></script></body>
+<script src="scripts-7MNLW4NL.js" defer=""></script><script src="main-2QKCOEFW.js" type="module"></script></body>
 </html>
 `;
