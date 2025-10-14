@@ -1,19 +1,28 @@
+/* 1) Root del componente: centra y evita desbordes */
 :host {
-  display: grid;
-  place-items: center;
+  display: flex;                 /* en lugar de grid */
+  justify-content: center;       /* centra horizontal */
+  align-items: flex-start;       /* arriba */
   padding: 1.5rem;
+  width: 100%;
+  overflow-x: hidden;            /* no permitir desbordes horizontales */
+  box-sizing: border-box;
 }
 
+/* 2) Tarjeta: ancho máximo y centrada */
 .thanks {
   background: #fff;
   border-radius: 26px;
   padding: 2rem 1.5rem;
-  width: min(92vw, 720px);
+  width: 100%;
+  max-width: 420px;              /* límite en móvil */
+  margin: 0 auto;                /* centrada dentro del host */
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,.06);
   color: var(--ink);
+  box-sizing: border-box;
 }
-
+/* Icono */
 .thanks__icon {
   width: 64px; height: 64px; margin: 0 auto 1rem;
   display: grid; place-items: center;
@@ -21,39 +30,74 @@
   background: rgba(245,158,11,.12);
 }
 
+/* Título */
 .thanks__title {
   font-size: clamp(1.6rem, 3.5vw, 2.2rem);
   margin: .25rem 0 .5rem;
 }
 
+/* Subtítulo */
 .thanks__subtitle {
   max-width: 60ch;
   margin: 0 auto 1.25rem;
   color: #475569;
 }
 
+/* Meta */
 .thanks__meta {
   font-size: .95rem;
   color: #64748b;
   margin: .25rem 0 1.5rem;
 }
 
-.actions { display: flex; gap: .6rem; justify-content: center; flex-wrap: wrap; }
+.actions {
+  display: flex;
+  gap: .6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-
+/* Footer */
 .thanks__foot {
   margin-top: 1.5rem;
   font-size: .9rem;
   color: #94a3b8;
 }
-.btn{display:inline-block;padding:.9rem 1.2rem;border-radius:20px;border:0;background:var(--ink);color:var(--accent);text-decoration:none}
-.btn--ghost{background:transparent;border:1px solid var(--ink);color:var(--ink);margin-left:.6rem; font-family: inherit; font-size: inherit; font-weight: inherit;}
-.btn:hover{color:var(--ink);background:#72879c67}
-.btn--ghost:hover{color:#b45309;background:rgba(245,158,11,.15)}
 
+/* Botones */
+.btn {
+  display: inline-block;
+  padding: .9rem 1.2rem;
+  border-radius: 20px;
+  border: 0;
+  background: var(--ink);
+  color: var(--accent);
+  text-decoration: none;
+}
 
+.btn--ghost {
+  background: transparent;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  margin-left: .6rem;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.btn:hover {
+  color: var(--ink);
+  background: #72879c67;
+}
+
+.btn--ghost:hover {
+  color: #b45309;
+  background: rgba(245,158,11,.15);
+}
+
+/* 🔹 Mobile */
 @media (max-width: 600px) {
   :host { padding: 1rem; }
-  .thanks { padding: 1.5rem 1rem; }
-  .btn--ghost{ margin-left: 0; color:#b45309;background:rgba(245,158,11,.15);}
+  .thanks { padding: 1.5rem 1rem; max-width: 95%; } /* margen lateral visible */
+  .btn--ghost{ margin-left: 0; color:#b45309; background:rgba(245,158,11,.15); }
 }

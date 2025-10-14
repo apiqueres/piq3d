@@ -1,10 +1,11 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, HostListener, signal } from '@angular/core';
 import { RevealOnScrollDirective } from '../directives/reveal-on-scroll.directive';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-productos',
-  imports: [CommonModule, NgOptimizedImage, RevealOnScrollDirective],
+  imports: [CommonModule, NgOptimizedImage, RevealOnScrollDirective,RouterLink],
   templateUrl: './productos.html',
   styleUrl: './productos.scss'
 })

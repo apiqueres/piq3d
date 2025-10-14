@@ -1,3 +1,7 @@
+@import 'aos/dist/aos.css';
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+
 /* You can add global styles to this file, and also import other style files */
 body{
   background: linear-gradient(95deg, rgb(255, 242, 218), rgb(247, 206, 129));
@@ -7,6 +11,10 @@ body{
   font-size: 24px;
   color: #385069;
 }
+
+.snack-info   { background: #374151; color: #fff; }
+.snack-success{ background: #2e7d32; color: #fff; }
+.snack-error  { background: #e53935; color: #fff; }
 
   @media screen and (max-width: 500px) {
     .content {

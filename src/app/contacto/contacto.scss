@@ -15,6 +15,20 @@
   font-family: inherit;
 }
 
+.field--error input,
+.field--error textarea,
+.field--error .cs {
+  outline: 2px solid #e53935;
+}
+.error {
+  color: #e53935;
+  font-size: .9rem;
+  margin-top: .25rem;
+  display: block;
+}
+
+
+
 .btn--ghost {
   background: transparent;
   border: 1px solid var(--ink);
