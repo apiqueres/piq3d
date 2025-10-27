@@ -10,9 +10,9 @@
   <!-- 👇 Galería dentro de la carta -->
   <figure 
     class="card__media gallery crossfade" 
-    [style.--count]="llaveros_gossos.images.length"
+    [style.--count]="llaveros_perso.images.length"
   >
-    <ng-container *ngFor="let img of llaveros_gossos.images; let i = index">
+    <ng-container *ngFor="let img of llaveros_perso.images; let i = index">
       <!-- Probing oculto para marcar ready -->
       <img *ngIf="!img.ready"
            [src]="img.src"
@@ -34,7 +34,7 @@
   <div class="txt">
     <h3>Llavero personalizado</h3>
     <p>Pon el nombre y/o número en cada uno</p>
-    <div class="meta"><span class="price">3,5€ ud. *</span></div>
+    <div class="meta"><span class="price">3,5€ ud.</span></div>
   </div>
 </article>
 
@@ -43,9 +43,9 @@
   <!-- 👇 Galería dentro de la carta -->
   <figure 
     class="card__media gallery crossfade" 
-    [style.--count]="llaveros_gossos.images.length"
+    [style.--count]="llaveros.images.length"
   >
-    <ng-container *ngFor="let img of llaveros_gossos.images; let i = index">
+    <ng-container *ngFor="let img of llaveros.images; let i = index">
       <!-- Probing oculto para marcar ready -->
       <img *ngIf="!img.ready"
            [src]="img.src"
@@ -77,9 +77,9 @@
   <!-- 👇 Galería dentro de la carta -->
   <figure 
     class="card__media gallery crossfade" 
-    [style.--count]="llaveros_gossos.images.length"
+    [style.--count]="figures_mascota.images.length"
   >
-    <ng-container *ngFor="let img of llaveros_gossos.images; let i = index">
+    <ng-container *ngFor="let img of figures_mascota.images; let i = index">
       <!-- Probing oculto para marcar ready -->
       <img *ngIf="!img.ready"
            [src]="img.src"
@@ -105,7 +105,7 @@
   </div>
 </article>
 
-  <!-- 4. Trofeo estándar (22–25 cm) -->
+  <!-- 4. llaveros gossos -->
    <article class="card" revealOnScroll>
   <!-- 👇 Galería dentro de la carta -->
   <figure 
@@ -138,14 +138,14 @@
   </div>
 </article>
 
-  <!-- 5. Trofeo medio (15–18 cm) -->
+  <!-- 5. Trofeos  -->
 <article class="card" revealOnScroll>
   <!-- 👇 Galería dentro de la carta -->
   <figure 
     class="card__media gallery crossfade" 
-    [style.--count]="llaveros_gossos.images.length"
+    [style.--count]="trofeos.images.length"
   >
-    <ng-container *ngFor="let img of llaveros_gossos.images; let i = index">
+    <ng-container *ngFor="let img of trofeos.images; let i = index">
       <!-- Probing oculto para marcar ready -->
       <img *ngIf="!img.ready"
            [src]="img.src"
@@ -167,7 +167,7 @@
   <div class="txt">
     <h3>Trofeo personalizado</h3>
     <p>Si lo has ganado, que se note…</p>
-    <div class="meta"><span class="price">S 8€ · M 15€ · L 25€ · XL 35€ *</span></div>
+    <div class="meta"><span class="price">S 8€ · M 15€ · L 25€ · XL 35€ **</span></div>
   </div>
 </article>
 
@@ -176,9 +176,9 @@
   <!-- 👇 Galería dentro de la carta -->
   <figure 
     class="card__media gallery crossfade" 
-    [style.--count]="llaveros_gossos.images.length"
+    [style.--count]="medallas.images.length"
   >
-    <ng-container *ngFor="let img of llaveros_gossos.images; let i = index">
+    <ng-container *ngFor="let img of medallas.images; let i = index">
       <!-- Probing oculto para marcar ready -->
       <img *ngIf="!img.ready"
            [src]="img.src"
@@ -209,9 +209,9 @@
   <!-- 👇 Galería dentro de la carta -->
   <figure 
     class="card__media gallery crossfade" 
-    [style.--count]="llaveros_gossos.images.length"
+    [style.--count]="nombres.images.length"
   >
-    <ng-container *ngFor="let img of llaveros_gossos.images; let i = index">
+    <ng-container *ngFor="let img of nombres.images; let i = index">
       <!-- Probing oculto para marcar ready -->
       <img *ngIf="!img.ready"
            [src]="img.src"
@@ -241,9 +241,9 @@
   <article class="card" revealOnScroll>
      <figure 
     class="card__media gallery crossfade" 
-    [style.--count]="llaveros_gossos.images.length"
+    [style.--count]="marcos.images.length"
   >
-    <ng-container *ngFor="let img of llaveros_gossos.images; let i = index">
+    <ng-container *ngFor="let img of marcos.images; let i = index">
       <!-- Probing oculto para marcar ready -->
       <img *ngIf="!img.ready"
            [src]="img.src"
@@ -272,9 +272,9 @@
   <article class="card" revealOnScroll>
      <figure 
     class="card__media gallery crossfade" 
-    [style.--count]="llaveros_gossos.images.length"
+    [style.--count]="bocinas.images.length"
   >
-    <ng-container *ngFor="let img of llaveros_gossos.images; let i = index">
+    <ng-container *ngFor="let img of bocinas.images; let i = index">
       <!-- Probing oculto para marcar ready -->
       <img *ngIf="!img.ready"
            [src]="img.src"
@@ -303,9 +303,9 @@
   <article class="card" revealOnScroll>
      <figure 
     class="card__media gallery crossfade" 
-    [style.--count]="llaveros_gossos.images.length"
+    [style.--count]="figuritas.images.length"
   >
-    <ng-container *ngFor="let img of llaveros_gossos.images; let i = index">
+    <ng-container *ngFor="let img of figuritas.images; let i = index">
       <!-- Probing oculto para marcar ready -->
       <img *ngIf="!img.ready"
            [src]="img.src"
@@ -329,4 +329,11 @@
       <div class="meta"><span class="price">45€</span></div>
     </div>
   </article>
+</section>
+
+<section class="cta-final" style="text-align: center; font-size: 1.25rem;" revealOnScroll>
+  
+  <a data-aos="fade-left" data-aos-duration="500" routerLink="/contacto" class=" btn btn--ghost" style="color: #385069;">* El precio baja 0,25€ por cada 50 unidades. A partir de 300 unidades el precio es siempre el mismo por unidad</a>
+  <a data-aos="fade-left" data-aos-duration="500" routerLink="/contacto" class=" btn btn--ghost" style="color: #385069;">** El precio baja respecto a cuántas unidades se pidan. ¡Consulta los precios directamente con nosotros!</a>
+
 </section>
