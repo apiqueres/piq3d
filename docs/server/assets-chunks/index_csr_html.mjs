@@ -15,6 +15,6 @@ export default `<!doctype html>
 <body ngcm="">
   <app-root></app-root>
  
-<link rel="modulepreload" href="chunk-IMPBB4AK.js"><script src="scripts-7MNLW4NL.js" defer=""></script><script src="main-FZ5ECBEE.js" type="module"></script></body>
+<link rel="modulepreload" href="chunk-IMPBB4AK.js"><script src="scripts-7MNLW4NL.js" defer=""></script><script src="main-H52VSCEI.js" type="module"></script></body>
 </html>
 `;
