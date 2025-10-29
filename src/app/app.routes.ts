@@ -6,10 +6,11 @@ import { Contacto } from './contacto/contacto';
 import { Gracias } from './gracias/gracias';
 
 export const routes: Routes = [
-    { path: 'inicio', component: Inicio },
-    { path: '', redirectTo: 'inicio', pathMatch: 'full' }, 
-    { path: 'productos', component: Productos},
-    { path: 'contacto', component: Contacto},
-    { path: 'gracias', component: Gracias},
-    { path: '**', redirectTo: 'inicio', pathMatch: 'full' }
+  { path: '', component: Inicio, pathMatch: 'full' },   
+  { path: 'inicio', component: Inicio },
+  { path: 'productos', component: Productos },
+  { path: 'contacto', component: Contacto },
+  { path: 'gracias', component: Gracias },
+  { path: '**', redirectTo: '/inicio', pathMatch: 'full' }
 ];
+
