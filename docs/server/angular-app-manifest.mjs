@@ -2,44 +2,44 @@
 export default {
   bootstrap: () => import('./main.server.mjs').then(m => m.default),
   inlineCriticalCss: true,
-  baseHref: '/piq3d/',
+  baseHref: '/',
   locale: undefined,
   routes: [
   {
     "renderMode": 2,
-    "redirectTo": "/piq3d/inicio",
-    "route": "/piq3d"
+    "redirectTo": "/inicio",
+    "route": "/"
   },
   {
     "renderMode": 2,
-    "route": "/piq3d/inicio"
+    "route": "/inicio"
   },
   {
     "renderMode": 2,
-    "route": "/piq3d/productos"
+    "route": "/productos"
   },
   {
     "renderMode": 2,
-    "route": "/piq3d/contacto"
+    "route": "/contacto"
   },
   {
     "renderMode": 2,
-    "route": "/piq3d/gracias"
+    "route": "/gracias"
   },
   {
     "renderMode": 2,
-    "redirectTo": "/piq3d/inicio",
-    "route": "/piq3d/**"
+    "redirectTo": "/inicio",
+    "route": "/**"
   }
 ],
   entryPointToBrowserMapping: undefined,
   assets: {
-    'index.csr.html': {size: 58629, hash: '75063e09ffecd3db96e6f5b82c9746497c7dc73922bd17d0e1d110dcdf60d9e6', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
-    'index.server.html': {size: 4926, hash: '8626e551b759fe483350dc023c2d955c7b97c905bbadb348aeee649a70c5c8d4', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
-    'inicio/index.html': {size: 77807, hash: '2a00fc600f61ddda2ab2f26c50655babf168b61930b517981babed77d3f44e88', text: () => import('./assets-chunks/inicio_index_html.mjs').then(m => m.default)},
-    'contacto/index.html': {size: 76707, hash: '71f10d217cf65b8e74a68c4e13121196e9b83f3151fd9313273eefee5b22fc7c', text: () => import('./assets-chunks/contacto_index_html.mjs').then(m => m.default)},
-    'gracias/index.html': {size: 68007, hash: 'b37a0de0a846515414b0beb6e9ae9e747d6d6396e2fbe08f55445e6c406a701d', text: () => import('./assets-chunks/gracias_index_html.mjs').then(m => m.default)},
-    'productos/index.html': {size: 80831, hash: '9c0677915bf1b6a59bfd60c5230644fa0386adecfb988f3254cd2a4653d22644', text: () => import('./assets-chunks/productos_index_html.mjs').then(m => m.default)},
+    'index.csr.html': {size: 58623, hash: '71c966d88585e75b9f7157cc15fc91f076011003d05c94b98108659673058ec1', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
+    'index.server.html': {size: 4920, hash: '7ea70e41fd2bbfaafd62f85561bcff24353be914be59c49403cd51b7560ddd40', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
+    'inicio/index.html': {size: 77747, hash: '626a80977cfd46ad5b5c0d73d48347d2e6b54953f9b4032c995f6b337e127267', text: () => import('./assets-chunks/inicio_index_html.mjs').then(m => m.default)},
+    'gracias/index.html': {size: 67965, hash: '58de71681ddb0361d813e38b1cc49a7232321189fce1e552a082bf78fc528ad6', text: () => import('./assets-chunks/gracias_index_html.mjs').then(m => m.default)},
+    'contacto/index.html': {size: 76665, hash: '643741af5ced8339755d632bb4090f4d34ecd70222bd88e72bb06fabbb373889', text: () => import('./assets-chunks/contacto_index_html.mjs').then(m => m.default)},
+    'productos/index.html': {size: 80771, hash: 'aae824d995cc4ae7e620555ae2e72f4391f3e4c17d87f3ee53efdd19e4e5d8de', text: () => import('./assets-chunks/productos_index_html.mjs').then(m => m.default)},
     'styles-EEKN4ZKZ.css': {size: 130321, hash: 'RtYMvnomXlc', text: () => import('./assets-chunks/styles-EEKN4ZKZ_css.mjs').then(m => m.default)}
   },
 };

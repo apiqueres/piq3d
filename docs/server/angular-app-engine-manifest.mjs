@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/piq3d',
+  basePath: '/',
   supportedLocales: {
   "en-US": ""
 },
