@@ -13,6 +13,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <script>
+  (function () {
+    var p = window.location.pathname;
+    // Redirige solo si estás exactamente en la raíz
+    if (p === '/' || p === '/index.html') {
+      var target = '/inicio' + window.location.search + window.location.hash;
+      window.location.replace(target);
+    }
+  })();
+</script>
+
   <app-root></app-root>
  
 </body>
