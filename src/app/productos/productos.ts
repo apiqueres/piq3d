@@ -52,7 +52,7 @@ figures_mascota = {
   images: [
     { src: 'assets/colette.png', w: 500, h: 500, alt: 'Vista 1', ready: false },
     { src: 'assets/vogan.png', w: 500, h: 500, alt: 'Vista 2', ready: false },
-    { src: 'assets/llaverosgosos3.png', w: 500, h: 500, alt: 'Vista 3', ready: false },
+    { src: 'assets/cloe.jpg', w: 500, h: 500, alt: 'Vista 3', ready: false },
   ],
   // ...otros campos (titulo, precio, etc.)
 };
@@ -106,7 +106,7 @@ figuritas = {
   images: [
     { src: 'assets/figura1.png', w: 500, h: 500, alt: 'Vista 1', ready: false },
     { src: 'assets/figura2.png', w: 500, h: 500, alt: 'Vista 2', ready: false },
-    { src: 'assets/figura1.png', w: 500, h: 500, alt: 'Vista 3', ready: false },
+    { src: 'assets/figura3.jpg', w: 500, h: 500, alt: 'Vista 3', ready: false },
   ],
   // ...otros campos (titulo, precio, etc.)
 };
