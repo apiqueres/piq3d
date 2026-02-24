@@ -330,13 +330,13 @@
 
 /* Crossfade */
 .gallery.crossfade {
-  --dur: 14s;
+  --slide-dur: 3.5s;
 }
 
 .gallery.crossfade .fade-cycle {
-  /* importante: que el elemento esté en un punto distinto del ciclo al cargar */
-  animation: xfade var(--dur) linear infinite;
-  animation-delay: calc((var(--i) * var(--dur) / var(--count)) * -1);
+  /* cada imagen tiene su turno: un único frame visible cada vez */
+  animation: xfade calc(var(--slide-dur) * var(--count)) linear infinite;
+  animation-delay: calc(var(--i) * var(--slide-dur) * -1);
 
   /* opcional pero recomendado para suavidad */
   will-change: opacity;
@@ -344,10 +344,9 @@
 
 /* Fade-in + hold + fade-out */
 @keyframes xfade {
-  0%   { opacity: 0; }
-  8%   { opacity: 1; }   /* fade in */
-  28%  { opacity: 1; }   /* se mantiene */
-  40%  { opacity: 0; }   /* fade out */
+  0%   { opacity: 1; }
+  10%  { opacity: 1; }
+  14%  { opacity: 0; }
   100% { opacity: 0; }
 }
 
