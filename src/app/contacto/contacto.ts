@@ -1,14 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, HostListener } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import emailjs from '@emailjs/browser';
+import { RevealOnScrollDirective } from '../directives/reveal-on-scroll.directive';
 
 @Component({
-  selector: 'app-contacto',
+    selector: 'app-contacto',
   standalone: true,
-  imports: [CommonModule, FormsModule, MatSnackBarModule], // 👈 aquí
+  imports: [CommonModule, FormsModule, MatSnackBarModule, RouterLink, RevealOnScrollDirective],
   templateUrl: './contacto.html',
   styleUrls: ['./contacto.scss']
 })

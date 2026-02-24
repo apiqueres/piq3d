@@ -1,41 +1,32 @@
-<header class="navbar">
-  <div class="logo-menu">
-    <img src="assets/logo.png" alt="Piq3D" height="75">
+<header class="site-header">
+  <div class="brand">
+    <a routerLink="/inicio" class="brand__logo">piq<span>3d</span></a>
+    <div class="brand__tag">custom 3d studio</div>
   </div>
 
-  <!-- Botón hamburguesa (solo visible en móvil) -->
-  <button class="menu-toggle"
-        (click)="menuOpen = !menuOpen"
-        [attr.aria-expanded]="menuOpen"
-        aria-controls="mainmenu"
-        aria-label="Abrir menú" style="color: #385069;">☰</button>
+  <button class="menu-toggle" type="button" (click)="toggleMenu()" aria-label="Abrir menú">
+    ☰
+  </button>
 
-  <!-- Menú principal -->
-  <nav class="menu" [class.is-open]="menuOpen">
-    <a  routerLink="/inicio" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-      Inicio
-    </a>
-    <a routerLink="/productos" routerLinkActive="active">
-      Productos
-    </a>
-    <a routerLink="/contacto" routerLinkActive="active">
-      ¡Pregúntanos!
-    </a>
+  <nav class="main-nav" [class.is-open]="menuOpen">
+    <a routerLink="/inicio" routerLinkActive="active" (click)="menuOpen=false">Inicio</a>
+    <a routerLink="/productos" routerLinkActive="active" (click)="menuOpen=false">Productos</a>
+    <a routerLink="/contacto" routerLinkActive="active" (click)="menuOpen=false">Contacto</a>
   </nav>
 </header>
 
-<router-outlet></router-outlet>
+<main class="site-shell">
+  <router-outlet></router-outlet>
+</main>
 
-<footer class="footer footer--pill">
-  <div class="footer__inner">
-    <img src="assets/logo.png" alt="Piq3D" height="36" class="footer__logo" />
-    <nav class="footer__links">
-      <a routerLink="/inicio" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Inicio</a>
-      <span>·</span>
-      <a routerLink="/productos" routerLinkActive="active">Productos</a>
-      <span>·</span>
-      <a routerLink="/contacto" routerLinkActive="active">¡Pregúntanos!</a>
-    </nav>
-    <div class="footer__copy">© 2025 Piq3D</div>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">PIQ3D</div>
+    <div class="site-footer__links">
+      <a routerLink="/inicio">Inicio</a>
+      <a routerLink="/productos">Productos</a>
+      <a routerLink="/contacto">Contacto</a>
+    </div>
+    <div class="site-footer__copy">© 2026 PIQ3D · Diseño e impresión 3D</div>
   </div>
 </footer>

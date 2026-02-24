@@ -1,37 +1,65 @@
 @import 'aos/dist/aos.css';
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 
+:root {
+  /* Base claro */
+  --bg: #f6f3ee;          /* fondo general */
+  --panel: #ffffff;       /* tarjetas */
+  --panel-2: #fbfaf7;     /* panel secundario */
+  --line: rgba(15, 15, 18, 0.10);
+  --text: #121316;        /* texto principal */
+  --muted: rgba(18, 19, 22, 0.62);
+  --muted-2: rgba(18, 19, 22, 0.45);
 
-/* You can add global styles to this file, and also import other style files */
-body{
-  background: linear-gradient(95deg, rgb(255, 242, 218), rgb(247, 206, 129));
-  font-family: "Amatic SC", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 24px;
-  color: #385069;
+  /* Acento “premium” */
+  --accent: #e7a842;      /* dorado suave */
+  --accent-2: #b58c4a;
+
+  /* Sombras */
+  --shadow-1: 0 12px 28px rgba(0, 0, 0, 0.08);
+  --shadow-2: 0 28px 60px rgba(0, 0, 0, 0.10);
+
+  /* Radii */
+  --r-lg: 18px;
+  --r-md: 14px;
+  --r-sm: 12px;
+
+  /* Inputs */
+  --input-bg: #ffffff;
+  --input-line: rgba(15, 15, 18, 0.12);
+  --focus: rgba(201, 164, 106, 0.28);
 }
 
-.snack-info   { background: #374151; color: #fff; }
-.snack-success{ background: #2e7d32; color: #fff; }
-.snack-error  { background: #e53935; color: #fff; }
+* { box-sizing: border-box; }
 
-  @media screen and (max-width: 500px) {
-    .content {
-        flex-direction: column;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-    }
+html, body { margin: 0; padding: 0; }
 
-    body{
-        background: linear-gradient(95deg, rgb(255, 242, 218), rgb(247, 206, 129));
-    }
+body {
+  background:
+    linear-gradient(rgba(18,19,22,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18,19,22,0.045) 1px, transparent 1px),
+    radial-gradient(circle at 15% 10%, rgba(201,164,106,0.20), transparent 40%),
+    radial-gradient(circle at 85% 15%, rgba(0,0,0,0.06), transparent 45%),
+    var(--bg);
+  background-size: 180px 180px, 180px 180px, auto, auto, auto;
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
 
-    .divider {
-      height: 1px;
-      width: 100%;
-      background: var(--red-to-pink-to-purple-horizontal-gradient);
-      margin-block: 1.5rem;
-    }
+/* Enlaces */
+a { color: inherit; }
+
+/* Para que Material no se vea “demasiado” oscuro si lo usas en algún punto */
+.mat-mdc-snack-bar-container.snack-info { background: #374151; color: #fff; }
+.mat-mdc-snack-bar-container.snack-success { background: #2e7d32; color: #fff; }
+.mat-mdc-snack-bar-container.snack-error { background: #e53935; color: #fff; }
+
+/* Scrollbar suave (opcional) */
+@media (pointer: fine) {
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(18,19,22,0.18);
+    border-radius: 999px;
   }
+  ::-webkit-scrollbar-track { background: transparent; }
+}

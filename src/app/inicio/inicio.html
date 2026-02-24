@@ -1,77 +1,115 @@
-<!-- HERO -->
-<section class="hero" revealOnScroll>
-  <div class="hero__copy">
-    <h1>
-      <span class="line-in-left delay-0">Imaginamos. Diseñamos.</span><br />
-      <span class="line-in-left delay-1">Imprimimos tus ideas.</span>
-    </h1>
+<section class="landing">
+  <!-- HERO -->
+  <div class="hero" data-aos="fade-up">
+    <div class="hero__side">
+      <div class="hero__brand">piq3d</div>
+      <div class="hero__index">
+        <span class="big">01</span>
+        <span class="small">/03</span>
+      </div>
+      <div class="hero__vertical">3D PRINT • CUSTOM DESIGN • VALENCIA</div>
+    </div>
 
-    <p class="line-in-left delay-2">
-      Llaveros de clubes, empresas y mascotas, rótulos y trofeos 3D hechos a medida.
-    </p>
+    <div class="hero__content">
+      <div class="hero__topnav">
+        <a routerLink="/inicio">Home</a>
+        <a routerLink="/productos">Products</a>
+        <a routerLink="/contacto">Contact</a>
+      </div>
 
-    <div class="actions line-in-left delay-3">
-      <a routerLink="/contacto" class="btn btn-activo" onfocus="this.style.color='#222'">Pide tu diseño</a>
-      <a routerLink="/productos" class="btn btn--ghost">Ver productos</a>
+      <div class="hero__media">
+     <img
+        src="assets/inicio.png"
+        alt="Productos PIQ3D"
+        priority
+      />
+        <div class="hero__overlay"></div>
+      </div>
+
+      <div class="hero__caption">
+        <h1>DISEÑO 3D PERSONALIZADO</h1>
+        <p>
+          Creamos llaveros, figuras, trofeos y piezas únicas con una estética moderna,
+          fabricación precisa y acabado profesional.
+        </p>
+        <a class="cta" routerLink="/contacto">Pedir presupuesto →</a>
+      </div>
     </div>
   </div>
 
-  <!-- Galería con crossfade automático -->
-  <figure class="hero__art gallery crossfade">
-    <ng-container *ngFor="let img of heroImages; let i = index">
-      <!-- 1) Probing oculto -->
-      <img *ngIf="!img.ready" [src]="img.src" alt="" (load)="onProbeLoad($event, i)"
-        style="position:absolute; visibility:hidden; width:0; height:0;" />
+  <!-- PROJECTS / PRODUCT GRID -->
+  <div class="projects" data-aos="fade-up" data-aos-delay="150">
+    <div class="projects__title">Nuestros proyectos</div>
 
-      <!-- 2) Imagen única a pantalla completa (apiladas con crossfade) -->
-      <img *ngIf="img.ready" class="fade-cycle" [style.--i]="i" [ngSrc]="img.src" [width]="img.w" [height]="img.h"
-        [alt]="img.alt" [priority]="i === 0" />
-    </ng-container>
-  </figure>
+    <div class="projects__grid">
+      <a class="project-card tall" routerLink="/productos">
+        <img src="assets/llaveros1.png" alt="Llaveros personalizados" />
+        <div class="shade"></div>
+        <div class="label">
+          <h4>LLAVEROS PERSONALIZADOS</h4>
+          <span>Branding · Clubes · Eventos</span>
+        </div>
+      </a>
 
-</section>
+      <a class="project-card" routerLink="/productos">
+        <img src="assets/mascotas1.png" alt="Figura mascota" />
+        <div class="shade"></div>
+        <div class="label">
+          <h4>FIGURA MASCOTA</h4>
+          <span>Modelado desde foto</span>
+        </div>
+      </a>
 
-<!-- TIMELINE -->
-<section class="steps">
-  <h2>Cómo trabajamos</h2>
-  <ol style="list-style-type: none;">
-    <li data-aos="fade-up" data-aos-duration="500"><strong>1.</strong> Nos mandas tu idea o foto</li>
-    <li data-aos="fade-down" data-aos-duration="1000"><strong>2.</strong> Te proponemos el diseño 3D</li>
-    <li data-aos="fade-up" data-aos-duration="1500"><strong>3.</strong> Imprimimos con precisión</li>
-    <li data-aos="fade-down" data-aos-duration="2000"><strong>4.</strong> Te lo enviamos</li>
-  </ol>
-</section>
+      <a class="project-card" routerLink="/productos">
+        <img src="assets/trofeubarsa.png" alt="Producción de llaveros" />
+        <div class="shade"></div>
+        <div class="label">
+          <h4>PRODUCCIÓN PARA CLUBES</h4>
+          <span>Series y packs</span>
+        </div>
+      </a>
 
-<!-- COLECCIONES -->
-<section class="collections">
-  <article class="card" revealOnScroll>
-    <img ngSrc="assets/llaveros1.png" width="500" height="500" alt="Llaveros de clubes personalizados" />
-    <div class="txt">
-      <h3>Clubes &amp; Equipos</h3>
-      <p>Escudo, nombre y colores oficiales. Relieve real.</p>
+      <a class="project-card wide" routerLink="/contacto">
+        <img src="assets/fondo_card.png" alt="Pieza personalizada" />
+        <div class="shade"></div>
+        <div class="label">
+          <h4>¿TIENES UNA IDEA?</h4>
+          <span>Te ayudamos a diseñarla e imprimirla</span>
+        </div>
+      </a>
     </div>
-  </article>
+  </div>
 
-  <article class="card" revealOnScroll>
-    <img ngSrc="assets/colette.png" width="500" height="500" alt="Llavero mascota desde tu foto" />
-    <div class="txt">
-      <h3>Mascotas</h3>
-      <p>Con una foto haz un recuerdo de tu mascota. Tanto figurita como llavero</p>
+  
+  <!-- ABOUT -->
+  <div class="about" data-aos="fade-up" data-aos-delay="100">
+    <div class="about__title">ACERCA DE PIQ3D</div>
+
+    <div class="about__grid">
+      <div class="about__text">
+        <h2>Convertimos ideas en piezas reales.</h2>
+        <p>
+          Desde una foto, un logo o una idea, diseñamos y fabricamos productos 3D
+          personalizados con una línea visual cuidada y acabados listos para regalo, evento o marca.
+        </p>
+      </div>
+
+      <div class="about__services">
+        <h3>Nuestra especialidad</h3>
+        <ul>
+          <li>LLAVEROS</li>
+          <li>FIGURAS DE MASCOTAS</li>
+          <li>TROFEOS Y MEDALLAS</li>
+          <li>REGALOS PARA EVENTOS</li>
+          <li>REGALOS DE EMPRESAS</li>
+        </ul>
+      </div>
+
+      <div class="about__image">
+        <img src="assets/sofi.png" alt="Figura 3D personalizada" />
+      </div>
     </div>
-  </article>
-
-  <article class="card" revealOnScroll>
-    <img ngSrc="assets/trofeo2.jpg" width="500" height="500" alt="Rótulos 3D y trofeos" />
-    <div class="txt">
-      <h3>Decor &amp; Trofeos</h3>
-      <p>Rótulos con textura 3D y trofeos a medida para tus eventos.</p>
-    </div>
-  </article>
-</section>
+  </div>
 
 
-<!-- CTA FINAL -->
-<section class="cta-final" revealOnScroll>
-  <h2  data-aos="fade-right">Convierte tu idea en una creación 3D</h2>
-  <a routerLink="/contacto" class="btn"  data-aos="fade-left">Solicitar presupuesto</a>
 </section>

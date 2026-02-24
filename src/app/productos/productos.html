@@ -1,339 +1,388 @@
-<!-- PRODUCTOS -->
-<section class="cta-final" revealOnScroll>
-  <h2 data-aos="fade-up" data-aos-duration="500" class="line-in-left delay-0">Convierte tu idea en una creación 3D</h2>
-  <a data-aos="fade-left" data-aos-duration="500" routerLink="/contacto" class=" btn btn--ghost">Solicitar presupuesto</a>
-</section>
-
-<section class="collections" id="productos">
-  <!-- 1. Llavero personalizado (nombre + nº) -->
-  <article class="card" revealOnScroll>
-  <!-- 👇 Galería dentro de la carta -->
-  <figure 
-    class="card__media gallery crossfade" 
-    [style.--count]="llaveros_perso.images.length"
-  >
-    <ng-container *ngFor="let img of llaveros_perso.images; let i = index">
-      <!-- Probing oculto para marcar ready -->
-      <img *ngIf="!img.ready"
-           [src]="img.src"
-           alt=""
-           (load)="onCardProbeLoad(i)"
-           style="position:absolute; visibility:hidden; width:0; height:0;" />
-
-      <!-- Imagen visible, con crossfade -->
-      <img *ngIf="img.ready"
-           class="fade-cycle"
-           [style.--i]="i"
-           [ngSrc]="img.src"
-           [width]="img.w || 500"
-           [height]="img.h || 500"
-           [alt]="img.alt || 'Imagen de producto'" />
-    </ng-container>
-  </figure>
-
-  <div class="txt">
-    <h3>Llavero personalizado</h3>
-    <p>Pon el nombre y/o número en cada uno</p>
-    <div class="meta"><span class="price">3,5€ ud.</span></div>
-  </div>
-</article>
-
-  <!-- 2. Llavero genérico / logo -->
-  <article class="card" revealOnScroll>
-  <!-- 👇 Galería dentro de la carta -->
-  <figure 
-    class="card__media gallery crossfade" 
-    [style.--count]="llaveros.images.length"
-  >
-    <ng-container *ngFor="let img of llaveros.images; let i = index">
-      <!-- Probing oculto para marcar ready -->
-      <img *ngIf="!img.ready"
-           [src]="img.src"
-           alt=""
-           (load)="onCardProbeLoad(i)"
-           style="position:absolute; visibility:hidden; width:0; height:0;" />
-
-      <!-- Imagen visible, con crossfade -->
-      <img *ngIf="img.ready"
-           class="fade-cycle"
-           [style.--i]="i"
-           [ngSrc]="img.src"
-           [width]="img.w || 500"
-           [height]="img.h || 500"
-           [alt]="img.alt || 'Imagen de producto'" />
-    </ng-container>
-  </figure>
-
-  <div class="txt">
-    <h3>Llavero genérico / logo</h3>
-    <p>Tu logotipo en formato compacto, listo para regalar.</p>
-    <div class="meta"><span class="price">2,5€ ud. *</span></div>
-  </div>
-</article>
-
-  <!-- 3. Figura mascota (figura 3D) -->
-
-    <article class="card" revealOnScroll>
-  <!-- 👇 Galería dentro de la carta -->
-  <figure 
-    class="card__media gallery crossfade" 
-    [style.--count]="figures_mascota.images.length"
-  >
-    <ng-container *ngFor="let img of figures_mascota.images; let i = index">
-      <!-- Probing oculto para marcar ready -->
-      <img *ngIf="!img.ready"
-           [src]="img.src"
-           alt=""
-           (load)="onCardProbeLoad(i)"
-           style="position:absolute; visibility:hidden; width:0; height:0;" />
-
-      <!-- Imagen visible, con crossfade -->
-      <img *ngIf="img.ready"
-           class="fade-cycle"
-           [style.--i]="i"
-           [ngSrc]="img.src"
-           [width]="img.w || 500"
-           [height]="img.h || 500"
-           [alt]="img.alt || 'Imagen de producto'" />
-    </ng-container>
-  </figure>
-
-  <div class="txt">
-    <h3>Figura mascota</h3>
-    <p>Desde una foto, un modelo en 3D con detalle. </p>
-    <div class="meta"><span class="price">20 €</span></div>
-  </div>
-</article>
-
-  <!-- 4. llaveros gossos -->
-   <article class="card" revealOnScroll>
-  <!-- 👇 Galería dentro de la carta -->
-  <figure 
-    class="card__media gallery crossfade" 
-    [style.--count]="llaveros_gossos.images.length"
-  >
-    <ng-container *ngFor="let img of llaveros_gossos.images; let i = index">
-      <!-- Probing oculto para marcar ready -->
-      <img *ngIf="!img.ready"
-           [src]="img.src"
-           alt=""
-           (load)="onCardProbeLoad(i)"
-           style="position:absolute; visibility:hidden; width:0; height:0;" />
-
-      <!-- Imagen visible, con crossfade -->
-      <img *ngIf="img.ready"
-           class="fade-cycle"
-           [style.--i]="i"
-           [ngSrc]="img.src"
-           [width]="img.w || 500"
-           [height]="img.h || 500"
-           [alt]="img.alt || 'Imagen de producto'" />
-    </ng-container>
-  </figure>
-
-  <div class="txt">
-    <h3>Llavero mascotas</h3>
-    <p>lleva a tu mascota en el bolsillo</p>
-    <div class="meta"><span class="price">6€</span></div>
-  </div>
-</article>
-
-  <!-- 5. Trofeos  -->
-<article class="card" revealOnScroll>
-  <!-- 👇 Galería dentro de la carta -->
-  <figure 
-    class="card__media gallery crossfade" 
-    [style.--count]="trofeos.images.length"
-  >
-    <ng-container *ngFor="let img of trofeos.images; let i = index">
-      <!-- Probing oculto para marcar ready -->
-      <img *ngIf="!img.ready"
-           [src]="img.src"
-           alt=""
-           (load)="onCardProbeLoad(i)"
-           style="position:absolute; visibility:hidden; width:0; height:0;" />
-
-      <!-- Imagen visible, con crossfade -->
-      <img *ngIf="img.ready"
-           class="fade-cycle"
-           [style.--i]="i"
-           [ngSrc]="img.src"
-           [width]="img.w || 500"
-           [height]="img.h || 500"
-           [alt]="img.alt || 'Imagen de producto'" />
-    </ng-container>
-  </figure>
-
-  <div class="txt">
-    <h3>Trofeo personalizado</h3>
-    <p>Si lo has ganado, que se note…</p>
-    <div class="meta"><span class="price">S 8€ · M 15€ · L 20€ · XL 25€ **</span></div>
-  </div>
-</article>
-
-<!-- 6. Medallas -->
-<article class="card" revealOnScroll>
-  <!-- 👇 Galería dentro de la carta -->
-  <figure 
-    class="card__media gallery crossfade" 
-    [style.--count]="medallas.images.length"
-  >
-    <ng-container *ngFor="let img of medallas.images; let i = index">
-      <!-- Probing oculto para marcar ready -->
-      <img *ngIf="!img.ready"
-           [src]="img.src"
-           alt=""
-           (load)="onCardProbeLoad(i)"
-           style="position:absolute; visibility:hidden; width:0; height:0;" />
-
-      <!-- Imagen visible, con crossfade -->
-      <img *ngIf="img.ready"
-           class="fade-cycle"
-           [style.--i]="i"
-           [ngSrc]="img.src"
-           [width]="img.w || 500"
-           [height]="img.h || 500"
-           [alt]="img.alt || 'Imagen de producto'" />
-    </ng-container>
-  </figure>
-
-  <div class="txt">
-    <h3>Medallas personalizadas</h3>
-    <p>Diseño frontal y cinta a elegir.</p>
-    <div class="meta"><span class="price">2,5€ ud *</span></div>
-  </div>
-</article>
-
-  <!-- 7. Nombre personalizado -->
-   <article class="card" revealOnScroll>
-  <!-- 👇 Galería dentro de la carta -->
-  <figure 
-    class="card__media gallery crossfade" 
-    [style.--count]="nombres.images.length"
-  >
-    <ng-container *ngFor="let img of nombres.images; let i = index">
-      <!-- Probing oculto para marcar ready -->
-      <img *ngIf="!img.ready"
-           [src]="img.src"
-           alt=""
-           (load)="onCardProbeLoad(i)"
-           style="position:absolute; visibility:hidden; width:0; height:0;" />
-
-      <!-- Imagen visible, con crossfade -->
-      <img *ngIf="img.ready"
-           class="fade-cycle"
-           [style.--i]="i"
-           [ngSrc]="img.src"
-           [width]="img.w || 500"
-           [height]="img.h || 500"
-           [alt]="img.alt || 'Imagen de producto'" />
-    </ng-container>
-  </figure>
-
-  <div class="txt">
-    <h3>Nombre personalizado</h3>
-      <p>Rotulación 3D para regalos, tartas o eventos.</p>
-      <div class="meta"><span class="price">20€ </span></div>
-  </div>
-</article>
-
-  <!-- 8. Marco retroiluminado (blanco) -->
-  <article class="card" revealOnScroll>
-     <figure 
-    class="card__media gallery crossfade" 
-    [style.--count]="marcos.images.length"
-  >
-    <ng-container *ngFor="let img of marcos.images; let i = index">
-      <!-- Probing oculto para marcar ready -->
-      <img *ngIf="!img.ready"
-           [src]="img.src"
-           alt=""
-           (load)="onCardProbeLoad(i)"
-           style="position:absolute; visibility:hidden; width:0; height:0;" />
-
-      <!-- Imagen visible, con crossfade -->
-      <img *ngIf="img.ready"
-           class="fade-cycle"
-           [style.--i]="i"
-           [ngSrc]="img.src"
-           [width]="img.w || 500"
-           [height]="img.h || 500"
-           [alt]="img.alt || 'Imagen de producto'" />
-    </ng-container>
-  </figure>
-    <div class="txt">
-      <h3>Marco retroiluminado</h3>
-      <p>ilumina tus recuerdos con una marco de fotos</p>
-      <div class="meta"><span class="price">blanco 18€ · color 20€</span></div>
+<section class="catalog">
+  <!-- HERO -->
+  <div class="catalog-hero" appRevealOnScroll>
+    <div class="catalog-hero__bg">
+      <img src="assets/fondo_card.png" alt="Productos PIQ3D" priority />
+      <div class="catalog-hero__overlay"></div>
     </div>
-  </article>
 
-  <!-- 13. Bocina animación -->
-  <article class="card" revealOnScroll>
-     <figure 
-    class="card__media gallery crossfade" 
-    [style.--count]="bocinas.images.length"
-  >
-    <ng-container *ngFor="let img of bocinas.images; let i = index">
-      <!-- Probing oculto para marcar ready -->
-      <img *ngIf="!img.ready"
-           [src]="img.src"
-           alt=""
-           (load)="onCardProbeLoad(i)"
-           style="position:absolute; visibility:hidden; width:0; height:0;" />
-
-      <!-- Imagen visible, con crossfade -->
-      <img *ngIf="img.ready"
-           class="fade-cycle"
-           [style.--i]="i"
-           [ngSrc]="img.src"
-           [width]="img.w || 500"
-           [height]="img.h || 500"
-           [alt]="img.alt || 'Imagen de producto'" />
-    </ng-container>
-  </figure>
-    <div class="txt">
-      <h3>Bocina animación</h3>
-      <p>Anima a tu equipo con todo.</p>
-      <div class="meta"><span class="price">6,5€ ud.</span></div>
+    <div class="catalog-hero__content">
+      <p class="eyebrow">PIQ3D · CATÁLOGO</p>
+      <h1>Convierte tu idea en una creación 3D</h1>
+      <p class="lead">
+        Diseños personalizados, producción en serie y acabados profesionales para regalos,
+        equipos, eventos y marcas.
+      </p>
+      <a routerLink="/contacto" class="btn-gold">Solicitar presupuesto</a>
     </div>
-  </article>
+  </div>
 
-  <!-- 14. Figura decorativa -->
-  <article class="card" revealOnScroll>
-     <figure 
-    class="card__media gallery crossfade" 
-    [style.--count]="figuritas.images.length"
-  >
-    <ng-container *ngFor="let img of figuritas.images; let i = index">
-      <!-- Probing oculto para marcar ready -->
-      <img *ngIf="!img.ready"
-           [src]="img.src"
-           alt=""
-           (load)="onCardProbeLoad(i)"
-           style="position:absolute; visibility:hidden; width:0; height:0;" />
+  <!-- GRID EDITORIAL -->
+  <div class="catalog-grid">
 
-      <!-- Imagen visible, con crossfade -->
-      <img *ngIf="img.ready"
-           class="fade-cycle"
-           [style.--i]="i"
-           [ngSrc]="img.src"
-           [width]="img.w || 500"
-           [height]="img.h || 500"
-           [alt]="img.alt || 'Imagen de producto'" />
-    </ng-container>
-  </figure>
-    <div class="txt">
+    <!-- TOP 1 · LLAVERO PERSONALIZADO (DESTACADO WIDE) -->
+    <article class="product-card" appRevealOnScroll>
+  <!-- lateral tipo hero__side -->
+  <div class="product-card__side">
+     
+
+    <div class="product-card__index">
+      <span class="big">01</span>
+      <span class="small"> /08</span>
+    </div>
+
+    <div class="product-card__vertical">LLAVERO · PERSONALIZADO</div>
+  </div>
+
+  <!-- contenido tipo hero__content -->
+  <div class="product-card__main">
+    <div class="product-card__media gallery crossfade" style="--count:3">
+      @for (img of llaveros_perso.images; track $index) {
+        <img
+          class="fade-cycle"
+          [style.--i]="$index"
+          [ngSrc]="img.src"
+          [width]="img.w"
+          [height]="img.h"
+          [alt]="img.alt"
+          (load)="onCardProbeLoad(llaveros_perso.images, $index)"
+        />
+      }
+
+      <div class="product-card__overlay"></div>
+    </div>
+
+    <!-- caption tipo hero__caption -->
+    <div class="product-card__caption">
+      <h3>Llavero personalizado</h3>
+      <p>Pon el nombre y/o número en cada uno.</p>
+
+      <div class="product-card__footer">
+        <span class="price">3,5€ ud.</span>
+        <a routerLink="/contacto" class="cta-mini">Pedir →</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- TOP 2 · LLAVERO logo (DESTACADO WIDE) -->
+ <article class="product-card" appRevealOnScroll>
+  <!-- lateral tipo hero__side -->
+  <div class="product-card__side">
+     
+
+    <div class="product-card__index">
+      <span class="big">02</span>
+      <span class="small"> /08</span>
+    </div>
+
+    <div class="product-card__vertical">LLAVERO · GENÉRICO / LOGO</div>
+  </div>
+
+  <!-- contenido tipo hero__content -->
+  <div class="product-card__main">
+    <div class="product-card__media gallery crossfade" style="--count:3">
+      @for (img of llaveros.images; track $index) {
+        <img
+          class="fade-cycle"
+          [style.--i]="$index"
+          [ngSrc]="img.src"
+          [width]="img.w"
+          [height]="img.h"
+          [alt]="img.alt"
+          (load)="onCardProbeLoad(llaveros.images, $index)"
+        />
+      }
+
+      <div class="product-card__overlay"></div>
+    </div>
+
+    <!-- caption tipo hero__caption -->
+    <div class="product-card__caption">
+      <h3>Llavero genérico / logo</h3>
+      <p>Tu logotipo en formato compacto, listo para regalar.</p>
+
+      <div class="product-card__footer">
+        <span class="price">2,5€ ud.</span>
+        <a routerLink="/contacto" class="cta-mini">Pedir →</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+    <!-- TOP 3 · FIGURA MASCOTA (DESTACADO TALL) -->
+  <article class="product-card product-card--tall" appRevealOnScroll>
+  <!-- lateral tipo hero__side -->
+  <div class="product-card__side">
+     
+
+    <div class="product-card__index">
+      <span class="big">03</span>
+      <span class="small"> /08</span>
+    </div>
+
+    <div class="product-card__vertical">FIGURA MASCOTA • CUSTOM 3D • PIQ3D</div>
+  </div>
+
+  <!-- contenido tipo hero__content -->
+  <div class="product-card__main">
+    <div class="product-card__media gallery crossfade" style="--count:7">
+      @for (img of figures_mascota.images; track $index) {
+        <img
+          class="fade-cycle"
+          [style.--i]="$index"
+          [ngSrc]="img.src"
+          [width]="img.w"
+          [height]="img.h"
+          [alt]="img.alt"
+          (load)="onCardProbeLoad(figures_mascota.images, $index)"
+        />
+      }
+
+      <div class="product-card__overlay"></div>
+    </div>
+
+    <!-- caption tipo hero__caption -->
+    <div class="product-card__caption">
+      <h3>FIGURA MASCOTA</h3>
+      <p>Desde una foto, un modelo 3D con detalle y acabado premium.</p>
+
+      <div class="product-card__footer">
+        <span class="price">20€</span>
+        <a routerLink="/contacto" class="cta-mini">Pedir →</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- TOP 4 · FIGURA MASCOTA (DESTACADO TALL) -->
+ <article class="product-card product-card--tall" appRevealOnScroll>
+  <!-- lateral tipo hero__side -->
+  <div class="product-card__side">
+     
+
+    <div class="product-card__index">
+      <span class="big">04</span>
+      <span class="small"> /08</span>
+    </div>
+
+    <div class="product-card__vertical">TROFEO PERSONALIZADO</div>
+  </div>
+
+  <!-- contenido tipo hero__content -->
+  <div class="product-card__main">
+    <div class="product-card__media gallery crossfade" style="--count:3">
+      @for (img of trofeos.images; track $index) {
+        <img
+          class="fade-cycle"
+          [style.--i]="$index"
+          [ngSrc]="img.src"
+          [width]="img.w"
+          [height]="img.h"
+          [alt]="img.alt"
+          (load)="onCardProbeLoad(trofeos.images, $index)"
+        />
+      }
+
+      <div class="product-card__overlay"></div>
+    </div>
+
+    <!-- caption tipo hero__caption -->
+    <div class="product-card__caption">
+      <h3>TROFEO PERSONALIZADO</h3>
+      <p>Si lo has ganado, que se note… Diseño según evento o competición.</p>
+
+      <div class="product-card__footer">
+        <span class="price">20€</span>
+        <a routerLink="/contacto" class="cta-mini">Pedir →</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- TOP 5 · LLAVERO MASCOTA (DESTACADO TALL) -->
+<article class="product-card" appRevealOnScroll>
+  <!-- lateral tipo hero__side -->
+  <div class="product-card__side">
+     
+
+    <div class="product-card__index">
+      <span class="big">05</span>
+      <span class="small"> /08</span>
+    </div>
+
+    <div class="product-card__vertical">LLAVERO / IMÁN MASCOTAS</div>
+  </div>
+
+  <!-- contenido tipo hero__content -->
+  <div class="product-card__main">
+    <div class="product-card__media gallery crossfade" style="--count:3">
+      @for (img of llaveros_gossos.images; track $index) {
+        <img
+          class="fade-cycle"
+          [style.--i]="$index"
+          [ngSrc]="img.src"
+          [width]="img.w"
+          [height]="img.h"
+          [alt]="img.alt"
+          (load)="onCardProbeLoad(llaveros_gossos.images, $index)"
+        />
+      }
+
+      <div class="product-card__overlay"></div>
+    </div>
+
+    <!-- caption tipo hero__caption -->
+    <div class="product-card__caption">
+      <h3>Llavero / Imán mascotas</h3>
+      <p>Lleva a tu mascota en el bolsillo con diseño personalizado.</p>
+
+      <div class="product-card__footer">
+        <span class="price">6€ ud.</span>
+        <a routerLink="/contacto" class="cta-mini">Pedir →</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- TOP 7 · figura -->
+<article class="product-card" appRevealOnScroll>
+  <!-- lateral tipo hero__side -->
+  <div class="product-card__side">
+     
+
+    <div class="product-card__index">
+      <span class="big">06</span>
+      <span class="small"> /08</span>
+    </div>
+
+    <div class="product-card__vertical">NOMBRE PERSONALIZADO</div>
+  </div>
+
+  <!-- contenido tipo hero__content -->
+  <div class="product-card__main">
+    <div class="product-card__media gallery crossfade" style="--count:3">
+      @for (img of nombres.images; track $index) {
+        <img
+          class="fade-cycle"
+          [style.--i]="$index"
+          [ngSrc]="img.src"
+          [width]="img.w"
+          [height]="img.h"
+          [alt]="img.alt"
+          (load)="onCardProbeLoad(figuritas.images, $index)"
+        />
+      }
+
+      <div class="product-card__overlay"></div>
+    </div>
+
+    <!-- caption tipo hero__caption -->
+    <div class="product-card__caption">
+      <h3>Nombre personalizado</h3>
+      <p>Rotulación 3D para regalos, tartas, habitaciones y eventos.</p>
+
+      <div class="product-card__footer">
+        <span class="price">20€</span>
+        <a routerLink="/contacto" class="cta-mini">Pedir →</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- TOP 7 · figura -->
+<article class="product-card product-card--tall" appRevealOnScroll>
+  <!-- lateral tipo hero__side -->
+  <div class="product-card__side">
+     
+    <div class="product-card__index">
+      <span class="big">07</span>
+      <span class="small"> /08</span>
+    </div>
+
+    <div class="product-card__vertical">FIGURA DECORATIVA</div>
+  </div>
+
+  <!-- contenido tipo hero__content -->
+  <div class="product-card__main">
+    <div class="product-card__media gallery crossfade" style="--count:3">
+      @for (img of figuritas.images; track $index) {
+        <img
+          class="fade-cycle"
+          [style.--i]="$index"
+          [ngSrc]="img.src"
+          [width]="img.w"
+          [height]="img.h"
+          [alt]="img.alt"
+          (load)="onCardProbeLoad(figuritas.images, $index)"
+        />
+      }
+
+      <div class="product-card__overlay"></div>
+    </div>
+
+    <!-- caption tipo hero__caption -->
+    <div class="product-card__caption">
       <h3>Figura decorativa</h3>
-      <p>Acabado premium para interior.</p>
-      <div class="meta"><span class="price">35€</span></div>
+      <p>Acabado premium para interior, colección o decoración.</p>
+
+      <div class="product-card__footer">
+        <span class="price">35€ ud.</span>
+        <a routerLink="/contacto" class="cta-mini">Pedir →</a>
+      </div>
     </div>
-  </article>
-</section>
+  </div>
+</article>
 
-<section class="cta-final" style="text-align: center; font-size: 1.25rem;" revealOnScroll>
-  
-  <a data-aos="fade-left" data-aos-duration="500" routerLink="/contacto" class=" btn btn--ghost" style="color: #385069; ">* El precio unitario baja 0,25€ por cada 50 unidades. A partir de 300 unidades el precio es siempre 1€ por unidad</a>
-  <a data-aos="fade-left" data-aos-duration="500" routerLink="/contacto" class=" btn btn--ghost" style="color: #385069; ">** El precio baja respecto a la cantidad de unidades se pidan. ¡Consulta los precios directamente con nosotros!</a>
+<!-- TOP 8 ·  -->
+<article class="product-card product-card--wide" appRevealOnScroll>
+  <!-- lateral tipo hero__side -->
+  <div class="product-card__side">
+     
+    <div class="product-card__index">
+      <span class="big">08</span>
+      <span class="small">/08</span>
+    </div>
 
+    <div class="product-card__vertical">OTROS</div>
+  </div>
+
+  <!-- contenido tipo hero__content -->
+  <div class="product-card__main">
+    <div class="product-card__media gallery crossfade" style="--count:3">
+      @for (img of figuritas.images; track $index) {
+        <img
+          class="fade-cycle"
+          [style.--i]="$index"
+          [ngSrc]="img.src"
+          [width]="img.w"
+          [height]="img.h"
+          [alt]="img.alt"
+          (load)="onCardProbeLoad(figuritas.images, $index)"
+        />
+      }
+
+      <div class="product-card__overlay"></div>
+    </div>
+
+    <!-- caption tipo hero__caption -->
+    <div class="product-card__caption">
+      <h3>Caricatura</h3>
+      <p>Acabado premium para interior, colección o decoración.</p>
+
+      <div class="product-card__footer">
+        <span class="price">20€ ud.</span>
+        <a routerLink="/contacto" class="cta-mini">Pedir →</a>
+      </div>
+    </div>
+  </div>
+</article>
+  </div>
+
+  <!-- FOOT NOTES -->
+  <div class="catalog-notes" appRevealOnScroll>
+    <p>* El precio unitario baja 0,25€ por cada 50 unidades. A partir de 300 unidades, 1€ por unidad.</p>
+    <p>** El precio de trofeos baja según cantidad. Consúltanos para tarifa por volumen.</p>
+    <a routerLink="/contacto" class="btn-line">Contactar ahora →</a>
+  </div>
 </section>
