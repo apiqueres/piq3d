@@ -334,14 +334,20 @@
 }
 
 .gallery.crossfade .fade-cycle {
+  /* importante: que el elemento esté en un punto distinto del ciclo al cargar */
   animation: xfade var(--dur) linear infinite;
-  animation-delay: calc(var(--i) * (var(--dur) / var(--count)));
+  animation-delay: calc((var(--i) * var(--dur) / var(--count)) * -1);
+
+  /* opcional pero recomendado para suavidad */
+  will-change: opacity;
 }
 
+/* Fade-in + hold + fade-out */
 @keyframes xfade {
-  0%   { opacity: 1; }
-  25%  { opacity: 1; }
-  40%  { opacity: 0; }
+  0%   { opacity: 0; }
+  8%   { opacity: 1; }   /* fade in */
+  28%  { opacity: 1; }   /* se mantiene */
+  40%  { opacity: 0; }   /* fade out */
   100% { opacity: 0; }
 }
 
