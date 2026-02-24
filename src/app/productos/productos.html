@@ -36,7 +36,7 @@
 
   <!-- contenido tipo hero__content -->
   <div class="product-card__main">
-    <div class="product-card__media gallery crossfade" style="--count:3">
+    <div class="product-card__media gallery crossfade" [style.--count]="llaveros_perso.images.length">
       @for (img of llaveros_perso.images; track $index) {
         <img
           class="fade-cycle"
@@ -81,7 +81,7 @@
 
   <!-- contenido tipo hero__content -->
   <div class="product-card__main">
-    <div class="product-card__media gallery crossfade" style="--count:3">
+    <div class="product-card__media gallery crossfade" [style.--count]="llaveros.images.length">
       @for (img of llaveros.images; track $index) {
         <img
           class="fade-cycle"
@@ -126,7 +126,7 @@
 
   <!-- contenido tipo hero__content -->
   <div class="product-card__main">
-    <div class="product-card__media gallery crossfade" style="--count:7">
+    <div class="product-card__media gallery crossfade" [style.--count]="figures_mascota.images.length">
       @for (img of figures_mascota.images; track $index) {
         <img
           class="fade-cycle"
@@ -171,7 +171,7 @@
 
   <!-- contenido tipo hero__content -->
   <div class="product-card__main">
-    <div class="product-card__media gallery crossfade" style="--count:3">
+    <div class="product-card__media gallery crossfade" [style.--count]="trofeos.images.length">
       @for (img of trofeos.images; track $index) {
         <img
           class="fade-cycle"
@@ -216,7 +216,7 @@
 
   <!-- contenido tipo hero__content -->
   <div class="product-card__main">
-    <div class="product-card__media gallery crossfade" style="--count:3">
+    <div class="product-card__media gallery crossfade" [style.--count]="llaveros_gossos.images.length">
       @for (img of llaveros_gossos.images; track $index) {
         <img
           class="fade-cycle"
@@ -261,7 +261,7 @@
 
   <!-- contenido tipo hero__content -->
   <div class="product-card__main">
-    <div class="product-card__media gallery crossfade" style="--count:3">
+    <div class="product-card__media gallery crossfade" [style.--count]="nombres.images.length">
       @for (img of nombres.images; track $index) {
         <img
           class="fade-cycle"
@@ -270,7 +270,7 @@
           [width]="img.w"
           [height]="img.h"
           [alt]="img.alt"
-          (load)="onCardProbeLoad(figuritas.images, $index)"
+          (load)="onCardProbeLoad(nombres.images, $index)"
         />
       }
 
@@ -305,7 +305,7 @@
 
   <!-- contenido tipo hero__content -->
   <div class="product-card__main">
-    <div class="product-card__media gallery crossfade" style="--count:3">
+    <div class="product-card__media gallery crossfade" [style.--count]="figuritas.images.length">
       @for (img of figuritas.images; track $index) {
         <img
           class="fade-cycle"
@@ -349,7 +349,7 @@
 
   <!-- contenido tipo hero__content -->
   <div class="product-card__main">
-    <div class="product-card__media gallery crossfade" style="--count:3">
+    <div class="product-card__media gallery crossfade" [style.--count]="figuritas.images.length">
       @for (img of figuritas.images; track $index) {
         <img
           class="fade-cycle"
