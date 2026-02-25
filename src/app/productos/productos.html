@@ -28,7 +28,7 @@
 
     <div class="product-card__index">
       <span class="big">01</span>
-      <span class="small"> /07</span>
+      <span class="small"> /09</span>
     </div>
 
     <div class="product-card__vertical">LLAVERO · PERSONALIZADO</div>
@@ -73,7 +73,7 @@
 
     <div class="product-card__index">
       <span class="big">02</span>
-      <span class="small"> /07</span>
+      <span class="small"> /09</span>
     </div>
 
     <div class="product-card__vertical">LLAVERO · GENÉRICO / LOGO</div>
@@ -118,7 +118,7 @@
 
     <div class="product-card__index">
       <span class="big">03</span>
-      <span class="small"> /07</span>
+      <span class="small"> /09</span>
     </div>
 
     <div class="product-card__vertical">FIGURA MASCOTA • CUSTOM 3D • PIQ3D</div>
@@ -163,7 +163,7 @@
 
     <div class="product-card__index">
       <span class="big">04</span>
-      <span class="small"> /07</span>
+      <span class="small"> /09</span>
     </div>
 
     <div class="product-card__vertical">TROFEO PERSONALIZADO</div>
@@ -201,14 +201,14 @@
 </article>
 
 <!-- TOP 5 · LLAVERO MASCOTA (DESTACADO TALL) -->
-<article class="product-card" appRevealOnScroll>
+<article class="product-card product-card--tall" appRevealOnScroll>
   <!-- lateral tipo hero__side -->
   <div class="product-card__side">
      
 
     <div class="product-card__index">
       <span class="big">05</span>
-      <span class="small"> /07</span>
+      <span class="small"> /09</span>
     </div>
 
     <div class="product-card__vertical">LLAVERO / IMÁN MASCOTAS</div>
@@ -245,24 +245,24 @@
   </div>
 </article>
 
-<!-- TOP 7 · figura -->
-<article class="product-card" appRevealOnScroll>
+<!-- TOP 6 · figura -->
+<article class="product-card " appRevealOnScroll>
   <!-- lateral tipo hero__side -->
   <div class="product-card__side">
      
 
     <div class="product-card__index">
       <span class="big">06</span>
-      <span class="small"> /07</span>
+      <span class="small"> /09</span>
     </div>
 
-    <div class="product-card__vertical">NOMBRE PERSONALIZADO</div>
+    <div class="product-card__vertical">MAPA · TOPOGRÁFICO</div>
   </div>
 
   <!-- contenido tipo hero__content -->
   <div class="product-card__main">
-    <div class="product-card__media gallery crossfade" [style.--count]="nombres.images.length">
-      @for (img of nombres.images; track $index) {
+    <div class="product-card__media gallery crossfade" [style.--count]="mapas.images.length">
+      @for (img of mapas.images; track $index) {
         <img
           class="fade-cycle"
           [style.--i]="$index"
@@ -270,7 +270,7 @@
           [width]="img.w"
           [height]="img.h"
           [alt]="img.alt"
-          (load)="onCardProbeLoad(nombres.images, $index)"
+          (load)="onCardProbeLoad(mapas.images, $index)"
         />
       }
 
@@ -279,8 +279,8 @@
 
     <!-- caption tipo hero__caption -->
     <div class="product-card__caption">
-      <h3>Nombre personalizado</h3>
-      <p>Rotulación 3D para regalos, tartas, habitaciones y eventos.</p>
+      <h3>Mapa topográfico</h3>
+      <p>Perfecto para recordar logros personales.</p>
 
       <div class="product-card__footer">
         <span class="price">20€</span>
@@ -297,7 +297,7 @@
      
     <div class="product-card__index">
       <span class="big">07</span>
-      <span class="small"> /07</span>
+      <span class="small"> /09</span>
     </div>
 
     <div class="product-card__vertical">FIGURA DECORATIVA</div>
@@ -334,23 +334,24 @@
   </div>
 </article>
 
-<!-- TOP 8 · 
-<article class="product-card product-card--wide" appRevealOnScroll>
- lateral tipo hero__side
+<!-- TOP 8 · caricatura --> 
+<article class="product-card product-card--tall product-card--wide
+" appRevealOnScroll>
+ 
   <div class="product-card__side">
      
     <div class="product-card__index">
       <span class="big">08</span>
-      <span class="small">/07</span>
+      <span class="small">/09</span>
     </div>
 
-    <div class="product-card__vertical">OTROS</div>
+    <div class="product-card__vertical">CARICATURAS</div>
   </div>
 
-   contenido tipo hero__content 
+  <!-- contenido tipo hero__content --> 
   <div class="product-card__main">
-    <div class="product-card__media gallery crossfade" [style.--count]="figuritas.images.length">
-      @for (img of figuritas.images; track $index) {
+    <div class="product-card__media gallery crossfade" [style.--count]="caricaturas.images.length">
+      @for (img of caricaturas.images; track $index) {
         <img
           class="fade-cycle"
           [style.--i]="$index"
@@ -358,17 +359,17 @@
           [width]="img.w"
           [height]="img.h"
           [alt]="img.alt"
-          (load)="onCardProbeLoad(figuritas.images, $index)"
+          (load)="onCardProbeLoad(caricaturas.images, $index)"
         />
       }
 
       <div class="product-card__overlay"></div>
     </div>
 
-     caption tipo hero__caption 
+     
     <div class="product-card__caption">
       <h3>Caricatura</h3>
-      <p>Acabado premium para interior, colección o decoración.</p>
+      <p>Personalización de caricaturas para regalos, eventos o decoración.</p>
 
       <div class="product-card__footer">
         <span class="price">20€ ud.</span>
@@ -377,8 +378,52 @@
     </div>
   </div>
 </article>
+ 
 
--->
+<!-- TOP 9 -->
+  <article class="product-card product-card--wide
+" appRevealOnScroll>
+ 
+  <div class="product-card__side">
+     
+    <div class="product-card__index">
+      <span class="big">09</span>
+      <span class="small">/09</span>
+    </div>
+
+    <div class="product-card__vertical">NOMBRE PERSONALIZADO</div>
+  </div>
+
+  <!-- contenido tipo hero__content --> 
+  <div class="product-card__main">
+    <div class="product-card__media gallery crossfade" [style.--count]="nombres.images.length">
+      @for (img of nombres.images; track $index) {
+        <img
+          class="fade-cycle"
+          [style.--i]="$index"
+          [ngSrc]="img.src"
+          [width]="img.w"
+          [height]="img.h"
+          [alt]="img.alt"
+          (load)="onCardProbeLoad(nombres.images, $index)"
+        />
+      }
+
+      <div class="product-card__overlay"></div>
+    </div>
+
+     
+    <div class="product-card__caption">
+      <h3>Nombre personalizado</h3>
+      <p>Personalización de nombres para regalos, eventos o decoración.</p>
+
+      <div class="product-card__footer">
+        <span class="price">20€ ud.</span>
+        <a routerLink="/contacto" class="cta-mini">Pedir →</a>
+      </div>
+    </div>
+  </div>
+</article>
   </div>
 
   <!-- FOOT NOTES -->

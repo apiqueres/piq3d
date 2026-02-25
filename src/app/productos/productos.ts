@@ -45,13 +45,17 @@ llaveros_perso = {
   // Modelo de ejemplo
 llaveros_gossos = {
   images: [
-    { src: 'assets/llaverosgosos1.png', w: 500, h: 500, alt: 'Vista 1', ready: false },
-    { src: 'assets/llaverosgosos2.png', w: 500, h: 500, alt: 'Vista 2', ready: false },
     { src: 'assets/llaverosgosos3.png', w: 500, h: 500, alt: 'Vista 3', ready: false },
     { src: 'assets/llaverosgosos4.png', w: 500, h: 500, alt: 'Vista 4', ready: false },
     { src: 'assets/llaverosgosos5.png', w: 500, h: 500, alt: 'Vista 5', ready: false },
     { src: 'assets/llaverosgosos6.png', w: 500, h: 500, alt: 'Vista 6', ready: false },
     { src: 'assets/llaverosgosos7.png', w: 500, h: 500, alt: 'Vista 7', ready: false },
+    { src: 'assets/llaverosgosos8.png', w: 500, h: 500, alt: 'Vista 8', ready: false },
+    { src: 'assets/llaverosgosos9.png', w: 500, h: 500, alt: 'Vista 9', ready: false },
+    { src: 'assets/llaverosgosos10.png', w: 500, h: 500, alt: 'Vista 10', ready: false },
+    { src: 'assets/llaverosgosos11.png', w: 500, h: 500, alt: 'Vista 5', ready: false },
+    { src: 'assets/llaverosgosos12.png', w: 500, h: 500, alt: 'Vista 6', ready: false },
+    { src: 'assets/llaverosgosos13.png', w: 500, h: 500, alt: 'Vista 7', ready: false },
   ],
   // ...otros campos (titulo, precio, etc.)
 };
@@ -62,6 +66,8 @@ figures_mascota = {
     { src: 'assets/sofi.png', w: 500, h: 500, alt: 'Vista 2', ready: false },
     { src: 'assets/REIN.png', w: 500, h: 500, alt: 'Vista 3', ready: false },
     { src: 'assets/XALI.png', w: 500, h: 500, alt: 'Vista 4', ready: false },
+    { src: 'assets/max.png', w: 500, h: 500, alt: 'Vista 3', ready: false },
+    { src: 'assets/lucky.png', w: 500, h: 500, alt: 'Vista 4', ready: false },
     { src: 'assets/colette.png', w: 500, h: 500, alt: 'Vista 5', ready: false },
     { src: 'assets/vogan.png', w: 500, h: 500, alt: 'Vista 6', ready: false },
     { src: 'assets/cloe.png', w: 500, h: 500, alt: 'Vista 7', ready: false },
@@ -110,9 +116,29 @@ bocinas = {
 
 figuritas = {
   images: [
-    { src: 'assets/figura1.png', w: 500, h: 500, alt: 'Vista 1', ready: false },
-    { src: 'assets/figura2.png', w: 500, h: 500, alt: 'Vista 2', ready: false },
+    { src: 'assets/figura6.png', w: 500, h: 500, alt: 'Vista 1', ready: false },
+    { src: 'assets/figura4.png', w: 500, h: 500, alt: 'Vista 3', ready: false },
+    { src: 'assets/figura5.png', w: 500, h: 500, alt: 'Vista 1', ready: false },
     { src: 'assets/figura3.png', w: 500, h: 500, alt: 'Vista 3', ready: false },
+  ],
+  // ...otros campos (titulo, precio, etc.)
+};
+
+caricaturas = {
+  images: [
+    { src: 'assets/caricatura1.png', w: 500, h: 500, alt: 'Vista 1', ready: false },
+    { src: 'assets/caricatura2.png', w: 500, h: 500, alt: 'Vista 2', ready: false },
+    { src: 'assets/caricatura3.png', w: 500, h: 500, alt: 'Vista 3', ready: false },
+    { src: 'assets/caricatura4.png', w: 500, h: 500, alt: 'Vista 4', ready: false },
+    { src: 'assets/caricatura5.png', w: 500, h: 500, alt: 'Vista 5', ready: false },
+
+  ],
+  // ...otros campos (titulo, precio, etc.)
+};
+mapas = {
+  images: [
+    { src: 'assets/mapa1.png', w: 500, h: 500, alt: 'Vista 1', ready: false },
+    { src: 'assets/mapa2.png', w: 500, h: 500, alt: 'Vista 2', ready: false },
   ],
   // ...otros campos (titulo, precio, etc.)
 };
