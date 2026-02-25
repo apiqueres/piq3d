@@ -1,9 +1,11 @@
 {
   "routes": {
     "/": {},
+    "/coming-soon-mascota": {},
     "/contacto": {},
     "/gracias": {},
     "/inicio": {},
+    "/personaliza-tu-mascota": {},
     "/productos": {}
   }
 }
