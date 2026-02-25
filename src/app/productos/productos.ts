@@ -24,17 +24,21 @@ export class Productos {
   llaveros = {
   images: [
     { src: 'assets/llavero1.png', w: 500, h: 500, alt: 'Vista 1', ready: false },
+    { src: 'assets/llavero2.png', w: 500, h: 500, alt: 'Vista 2', ready: false },
     { src: 'assets/llavero3.png', w: 500, h: 500, alt: 'Vista 3', ready: false },
     { src: 'assets/llavero4.png', w: 500, h: 500, alt: 'Vista 4', ready: false },
+    { src: 'assets/llavero5.png', w: 500, h: 500, alt: 'Vista 5', ready: false },
+    { src: 'assets/pubmviman.png', w: 500, h: 500, alt: 'Vista 6', ready: false },
   ],
   // ...otros campos (titulo, precio, etc.)
 };
 
 llaveros_perso = {
   images: [
-    { src: 'assets/perso1.png', w: 500, h: 500, alt: 'Vista 1', ready: false },
+    { src: 'assets/perso3.png', w: 500, h: 500, alt: 'Vista 1', ready: false },
+    { src: 'assets/perso4.png', w: 500, h: 500, alt: 'Vista 3', ready: false },
     { src: 'assets/perso2.png', w: 500, h: 500, alt: 'Vista 2', ready: false },
-    { src: 'assets/perso3.png', w: 500, h: 500, alt: 'Vista 3', ready: false },
+    { src: 'assets/perso1.png', w: 500, h: 500, alt: 'Vista 3', ready: false },
   ],
   // ...otros campos (titulo, precio, etc.)
 };
@@ -44,6 +48,10 @@ llaveros_gossos = {
     { src: 'assets/llaverosgosos1.png', w: 500, h: 500, alt: 'Vista 1', ready: false },
     { src: 'assets/llaverosgosos2.png', w: 500, h: 500, alt: 'Vista 2', ready: false },
     { src: 'assets/llaverosgosos3.png', w: 500, h: 500, alt: 'Vista 3', ready: false },
+    { src: 'assets/llaverosgosos4.png', w: 500, h: 500, alt: 'Vista 4', ready: false },
+    { src: 'assets/llaverosgosos5.png', w: 500, h: 500, alt: 'Vista 5', ready: false },
+    { src: 'assets/llaverosgosos6.png', w: 500, h: 500, alt: 'Vista 6', ready: false },
+    { src: 'assets/llaverosgosos7.png', w: 500, h: 500, alt: 'Vista 7', ready: false },
   ],
   // ...otros campos (titulo, precio, etc.)
 };
@@ -63,12 +71,12 @@ figures_mascota = {
 
 trofeos = {
   images: [
+    { src: 'assets/trofeu7.png', w: 500, h: 500, alt: 'Vista 5', ready: false },
     { src: 'assets/trofeubarsa.png', w: 500, h: 500, alt: 'Vista 1', ready: false },
-    { src: 'assets/inicio.png', w: 500, h: 500, alt: 'Vista 2', ready: false },
-    { src: 'assets/trofeo1.png', w: 500, h: 500, alt: 'Vista 3', ready: false },
+    { src: 'assets/trofeu5.png', w: 500, h: 500, alt: 'Vista 2', ready: false },
+    { src: 'assets/trofeu6.png', w: 500, h: 500, alt: 'Vista 3', ready: false },
     { src: 'assets/trofeo2.png', w: 500, h: 500, alt: 'Vista 4', ready: false },
-    { src: 'assets/trofeo3.png', w: 500, h: 500, alt: 'Vista 5', ready: false },
-    { src: 'assets/trofeo4.png', w: 500, h: 500, alt: 'Vista 6', ready: false },
+    { src: 'assets/trofeu4.png', w: 500, h: 500, alt: 'Vista 6', ready: false },
   ],
   // ...otros campos (titulo, precio, etc.)
 };

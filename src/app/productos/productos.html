@@ -380,9 +380,28 @@
   </div>
 
   <!-- FOOT NOTES -->
-  <div class="catalog-notes" appRevealOnScroll>
-    <p>* El precio unitario baja 0,25€ por cada 50 unidades. A partir de 300 unidades, 1€ por unidad.</p>
-    <p>** El precio de trofeos baja según cantidad. Consúltanos para tarifa por volumen.</p>
-    <a routerLink="/contacto" class="btn-line">Contactar ahora →</a>
+  <!-- FOOT NOTES -->
+<section class="catalog-notes" appRevealOnScroll aria-label="Notas de precios">
+  <div class="catalog-notes__content">
+    <div class="catalog-notes__text">
+      <p class="catalog-notes__item">
+        <span class="catalog-notes__mark">*</span>
+        El precio unitario baja <strong>0,25€</strong> por cada <strong>50 unidades</strong>.
+        A partir de <strong>300 unidades</strong>: <strong>1€</strong> por unidad.
+      </p>
+
+      <p class="catalog-notes__item">
+        <span class="catalog-notes__mark">**</span>
+        En <strong>trofeos y medallas</strong>, el precio varía según cantidad y diseño.
+        Consúltanos para tarifa por volumen.
+      </p>
+    </div>
+
+    <div class="catalog-notes__cta">
+      <a routerLink="/contacto" class="btn-line" aria-label="Ir a contacto para solicitar presupuesto">
+        Solicitar presupuesto →
+      </a>
+    </div>
   </div>
+</section>
 </section>
