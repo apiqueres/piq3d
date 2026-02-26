@@ -344,7 +344,7 @@
 
 /* Fade-in + hold + fade-out */
 @keyframes xfade {
-  0%   { opacity: 1; }
+  0%   { opacity: 0; }
   10%  { opacity: 1; }
   14%  { opacity: 0; }
   100% { opacity: 0; }
