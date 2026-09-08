@@ -1,0 +1,184 @@
+{
+  "img/medallas/ajedrez-sueca.webp": {
+    "w": 822,
+    "h": 1000,
+    "full": "img/medallas/ajedrez-sueca-full.webp",
+    "fw": 1097,
+    "fh": 1335
+  },
+  "img/medallas/ch-sueca.webp": {
+    "w": 750,
+    "h": 1000,
+    "full": "img/medallas/ch-sueca-full.webp",
+    "fw": 1200,
+    "fh": 1600
+  },
+  "img/medallas/sense-limits.webp": {
+    "w": 825,
+    "h": 1000,
+    "full": "img/medallas/sense-limits-full.webp",
+    "fw": 1320,
+    "fh": 1600
+  },
+  "img/medallas/valencia-xiques-reverso.webp": {
+    "w": 750,
+    "h": 1000,
+    "full": "img/medallas/valencia-xiques-reverso-full.webp",
+    "fw": 975,
+    "fh": 1300
+  },
+  "img/medallas/valencia-xiques.webp": {
+    "w": 750,
+    "h": 1000,
+    "full": "img/medallas/valencia-xiques-full.webp",
+    "fw": 1200,
+    "fh": 1600
+  },
+  "img/merch/figuritas.webp": {
+    "w": 800,
+    "h": 800,
+    "full": "img/merch/figuritas-full.webp",
+    "fw": 800,
+    "fh": 800
+  },
+  "img/merch/imanes-regalo.webp": {
+    "w": 800,
+    "h": 800,
+    "full": "img/merch/imanes-regalo-full.webp",
+    "fw": 800,
+    "fh": 800
+  },
+  "img/merch/imanes.webp": {
+    "w": 685,
+    "h": 685,
+    "full": "img/merch/imanes-full.webp",
+    "fw": 685,
+    "fh": 685
+  },
+  "img/merch/llaveros-club.webp": {
+    "w": 650,
+    "h": 650,
+    "full": "img/merch/llaveros-club-full.webp",
+    "fw": 650,
+    "fh": 650
+  },
+  "img/merch/llaveros.webp": {
+    "w": 650,
+    "h": 650,
+    "full": "img/merch/llaveros-full.webp",
+    "fw": 650,
+    "fh": 650
+  },
+  "img/merch/pin-falla.webp": {
+    "w": 800,
+    "h": 800,
+    "full": "img/merch/pin-falla-full.webp",
+    "fw": 800,
+    "fh": 800
+  },
+  "img/qr/ca-quintin.webp": {
+    "w": 927,
+    "h": 927,
+    "full": "img/qr/ca-quintin-full.webp",
+    "fw": 927,
+    "fh": 927
+  },
+  "img/qr/cocobeach.webp": {
+    "w": 835,
+    "h": 835,
+    "full": "img/qr/cocobeach-full.webp",
+    "fw": 835,
+    "fh": 835
+  },
+  "img/qr/el-niu.webp": {
+    "w": 1000,
+    "h": 1000,
+    "full": "img/qr/el-niu-full.webp",
+    "fw": 1028,
+    "fh": 1028
+  },
+  "img/qr/sushiroom.webp": {
+    "w": 1000,
+    "h": 1000,
+    "full": "img/qr/sushiroom-full.webp",
+    "fw": 1152,
+    "fh": 1152
+  },
+  "img/trofeos/3x3xiques.webp": {
+    "w": 800,
+    "h": 1000,
+    "full": null,
+    "fw": 800,
+    "fh": 1000
+  },
+  "img/trofeos/condecoracion.webp": {
+    "w": 800,
+    "h": 1000,
+    "full": null,
+    "fw": 800,
+    "fh": 1000
+  },
+  "img/trofeos/copitas-adesperanza.webp": {
+    "w": 800,
+    "h": 1000,
+    "full": null,
+    "fw": 800,
+    "fh": 1000
+  },
+  "img/trofeos/fibravalencia.webp": {
+    "w": 800,
+    "h": 1000,
+    "full": null,
+    "fw": 800,
+    "fh": 1000
+  },
+  "img/trofeos/futsal-mejor-jugador.webp": {
+    "w": 800,
+    "h": 1000,
+    "full": null,
+    "fw": 800,
+    "fh": 1000
+  },
+  "img/trofeos/futsal-sueca.webp": {
+    "w": 800,
+    "h": 1000,
+    "full": null,
+    "fw": 800,
+    "fh": 1000
+  },
+  "img/trofeos/la-canada.webp": {
+    "w": 800,
+    "h": 1000,
+    "full": null,
+    "fw": 800,
+    "fh": 1000
+  },
+  "img/trofeos/luis-vives.webp": {
+    "w": 800,
+    "h": 1000,
+    "full": null,
+    "fw": 800,
+    "fh": 1000
+  },
+  "img/trofeos/paellas-fallas.webp": {
+    "w": 800,
+    "h": 1000,
+    "full": null,
+    "fw": 800,
+    "fh": 1000
+  },
+  "img/trofeos/trofeos-inicio.webp": {
+    "w": 800,
+    "h": 1000,
+    "full": null,
+    "fw": 800,
+    "fh": 1000
+  },
+  "taller/prototipo.webp": {
+    "w": 750,
+    "h": 1000,
+    "full": "taller/prototipo-full.webp",
+    "fw": 1200,
+    "fh": 1600
+  }
+}

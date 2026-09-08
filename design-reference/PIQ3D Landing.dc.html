@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;300&family=Inter:wght@300;400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  html { background: #151515; }
+  body { margin: 0; background: #151515; color: #E4E2D8; font-family: "Space Mono", ui-monospace, monospace; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  * { box-sizing: border-box; }
+  a { color: #E4E2D8; text-decoration: none; }
+  a:hover { color: #E5404E; }
+  ::selection { background: #E5404E; color: #151515; }
+  @keyframes piqCue { 0% { transform: translateY(-65%); opacity: 0 } 50% { transform: translateY(0); opacity: 1 } 100% { transform: translateY(65%); opacity: 0 } }
+</style>
+</helmet>
+
+<div aria-hidden="true" style="pointer-events:none;position:fixed;inset:0;z-index:1;opacity:var(--piq-grain,0.09);mix-blend-mode:overlay;background-image:url(&quot;data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.8'%20numOctaves='4'/%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23n)'/%3E%3C/svg%3E&quot;)"></div>
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding:clamp(18px,2vw,28px) clamp(20px,4vw,40px);mix-blend-mode:normal">
+  <a href="#top" aria-label="PIQ3D — inicio" style="font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(17px,1.4vw,22px);letter-spacing:0.02em;color:#E4E2D8;display:flex">
+    <span data-wm="0" style="display:inline-block;will-change:transform">P</span><span data-wm="1" style="display:inline-block;will-change:transform">I</span><span data-wm="2" style="display:inline-block;will-change:transform">Q</span><span data-wm="3" style="display:inline-block;will-change:transform">3</span><span data-wm="4" style="display:inline-block;will-change:transform">D</span>
+  </a>
+  <nav style="display:flex;flex-wrap:wrap;gap:clamp(14px,1.8vw,30px);justify-content:flex-end">
+    <a href="#trofeos" data-nav="trofeos" data-underline="1" style="position:relative;font-family:Inter,sans-serif;font-weight:300;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#9B9B9B;padding-bottom:5px;overflow:hidden">TROFEOS<span data-ul="1" style="position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(228,226,216,0.3);transform:translateX(-101%);transition:transform 300ms cubic-bezier(.65,0,.35,1)"></span></a>
+    <a href="#medallas" data-nav="medallas" data-underline="1" style="position:relative;font-family:Inter,sans-serif;font-weight:300;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#9B9B9B;padding-bottom:5px;overflow:hidden">MEDALLAS<span data-ul="1" style="position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(228,226,216,0.3);transform:translateX(-101%);transition:transform 300ms cubic-bezier(.65,0,.35,1)"></span></a>
+    <a href="#merch" data-nav="merch" data-underline="1" style="position:relative;font-family:Inter,sans-serif;font-weight:300;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#9B9B9B;padding-bottom:5px;overflow:hidden">MERCH<span data-ul="1" style="position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(228,226,216,0.3);transform:translateX(-101%);transition:transform 300ms cubic-bezier(.65,0,.35,1)"></span></a>
+    <a href="#qrnfc" data-nav="qrnfc" data-underline="1" style="position:relative;font-family:Inter,sans-serif;font-weight:300;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#9B9B9B;padding-bottom:5px;overflow:hidden">QR+NFC<span data-ul="1" style="position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(228,226,216,0.3);transform:translateX(-101%);transition:transform 300ms cubic-bezier(.65,0,.35,1)"></span></a>
+    <a href="#contacto" data-nav="contacto" data-underline="1" style="position:relative;font-family:Inter,sans-serif;font-weight:300;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#9B9B9B;padding-bottom:5px;overflow:hidden">CONTACTO<span data-ul="1" style="position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(228,226,216,0.3);transform:translateX(-101%);transition:transform 300ms cubic-bezier(.65,0,.35,1)"></span></a>
+  </nav>
+</header>
+
+<main id="top" style="position:relative;z-index:0">
+
+  <section style="position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 clamp(20px,4vw,40px) clamp(20px,2.2vw,32px);overflow:hidden">
+    <div style="position:absolute;inset:0;z-index:-1;overflow:hidden">
+      <picture style="display:block;width:100%;height:100%">
+        <source media="(max-width: 767px)" srcset="uploads/hero-mobile.webp" />
+        <img data-hero-img="1" src="uploads/hero.webp" alt="" loading="eager" fetchpriority="high" style="height:100%;width:100%;object-fit:cover;object-position:center;will-change:transform" />
+      </picture>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,#151515 0%,#151515 15%,rgba(21,21,21,0.75) 55%,rgba(21,21,21,0) 100%)"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(21,21,21,0.9) 0%,rgba(21,21,21,0) 55%,rgba(21,21,21,0) 100%)"></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,4vw,64px);align-items:end;padding-bottom:clamp(36px,5vw,80px)">
+      <h1 style="margin:0;font-family:'Inter Tight',sans-serif;font-weight:300;color:#FFFFFF;font-size:clamp(56px,9.4vw,180px);line-height:0.9;letter-spacing:-0.01em">
+        <span style="display:block"><span data-word="0" style="display:inline-block;opacity:0.15;transform:translateY(0.15em);transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)">Del</span> <span data-word="1" style="display:inline-block;opacity:0.15;transform:translateY(0.15em);transition:opacity 0.9s cubic-bezier(.16,1,.3,1) 0.09s,transform 0.9s cubic-bezier(.16,1,.3,1) 0.09s">archivo</span></span>
+        <span style="display:block"><span data-word="2" style="display:inline-block;opacity:0.15;transform:translateY(0.15em);transition:opacity 0.9s cubic-bezier(.16,1,.3,1) 0.18s,transform 0.9s cubic-bezier(.16,1,.3,1) 0.18s">al</span> <span data-word="3" style="display:inline-block;opacity:0.15;transform:translateY(0.15em);transition:opacity 0.9s cubic-bezier(.16,1,.3,1) 0.27s,transform 0.9s cubic-bezier(.16,1,.3,1) 0.27s">podio.</span></span>
+      </h1>
+      <div style="display:flex;justify-content:flex-end">
+        <p data-reveal="2" style="margin:0;max-width:34ch;font-size:clamp(14px,1vw,17px);line-height:1.7;color:#DBDBDB;transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)">Trofeos, medallas, merch y cartas QR en impresión 3D FDM con materiales biodegradables.</p>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid rgba(228,226,216,0.14);padding-top:14px;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#9B9B9B">
+      <span>PIQ3D © 2026</span>
+      <div style="display:flex;align-items:center;gap:14px">
+        <span style="display:block;width:1px;height:26px;overflow:hidden;position:relative"><span style="position:absolute;left:0;top:0;width:1px;height:12px;background:#E5404E;animation:piqCue 1.6s linear infinite"></span></span>
+        <a href="#catalogo" data-arrowlink="1" style="display:flex;gap:8px;align-items:center;color:#E4E2D8;font-size:11px;text-transform:uppercase;letter-spacing:0.12em"><span data-label="1" style="display:inline-block;transition:transform 300ms cubic-bezier(.65,0,.35,1)">VER CATÁLOGO</span><span data-arrow="1" style="display:inline-block;opacity:0.4;transition:transform 300ms cubic-bezier(.65,0,.35,1),opacity 300ms cubic-bezier(.65,0,.35,1),color 300ms cubic-bezier(.65,0,.35,1)">↓</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(120px,18vw,var(--piq-gap,280px)) clamp(20px,4vw,40px) 0;display:flex;justify-content:center">
+    <div style="max-width:660px;width:100%">
+      <p data-reveal="0" style="margin:0 0 clamp(28px,3vw,48px);font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#9B9B9B;transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)">De dónde venimos</p>
+      <p data-reveal="1" style="margin:0 0 1.9em;font-size:clamp(15px,1vw,19px);line-height:1.75;color:#E4E2D8;max-width:52ch;text-wrap:pretty;transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)">PIQ3D nació en Sueca con una idea simple: que un club de pueblo pueda permitirse un trofeo tan bueno como el de una final internacional. Diseñamos cada pieza desde cero, la fabricamos aquí y la entregamos lista para el podio.</p>
+      <p data-reveal="2" style="margin:0;font-size:clamp(15px,1vw,19px);line-height:1.75;color:#DBDBDB;max-width:52ch;text-wrap:pretty;transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)">Trabajamos con clubes deportivos, comisiones falleras, ayuntamientos, organizadores de eventos, bares y restaurantes de toda la Comunitat Valenciana. Sin intermediarios: hablas directamente con quien diseña e imprime tu pedido.</p>
+    </div>
+  </section>
+
+  <section style="padding:clamp(120px,18vw,var(--piq-gap,280px)) clamp(20px,4vw,40px) 0">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(48px,6vw,96px);align-items:start">
+      <div data-reveal="0" style="transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)">
+        <p style="margin:0 0 18px;font-size:clamp(12px,0.83vw,16px);color:#9B9B9B">01.</p>
+        <h2 style="margin:0 0 28px;font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(38px,3.3vw,64px);line-height:0.9;letter-spacing:-0.0125em;color:#E4E2D8">Qué hacemos</h2>
+        <p style="margin:0 0 32px;font-size:clamp(15px,1vw,19px);line-height:1.75;max-width:52ch;color:#DBDBDB;text-wrap:pretty">Diseñamos y fabricamos la pieza completa, del boceto al empaquetado. Sin intermediarios y sin costes de utillaje.</p>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px;max-width:52ch">
+          <li style="display:grid;grid-template-columns:18px 1fr;gap:12px;font-size:clamp(14px,0.95vw,17px);line-height:1.6;color:#E4E2D8"><span style="color:#9B9B9B">—</span><span>Diseño 3D propio incluido en el presupuesto, sin coste de molde ni de troquel.</span></li>
+          <li style="display:grid;grid-template-columns:18px 1fr;gap:12px;font-size:clamp(14px,0.95vw,17px);line-height:1.6;color:#E4E2D8"><span style="color:#9B9B9B">—</span><span>Escudos, logos, nombres y fechas grabados en la propia pieza.</span></li>
+          <li style="display:grid;grid-template-columns:18px 1fr;gap:12px;font-size:clamp(14px,0.95vw,17px);line-height:1.6;color:#E4E2D8"><span style="color:#9B9B9B">—</span><span>Entrega en toda España.</span></li>
+        </ul>
+      </div>
+      <div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(48px,6vw,96px);align-items:start;margin-top:clamp(90px,12vw,200px)">
+      <div></div>
+      <div data-reveal="0" style="transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)">
+        <p style="margin:0 0 18px;font-size:clamp(12px,0.83vw,16px);color:#9B9B9B">02.</p>
+        <h2 data-lit="1" style="margin:0 0 28px;font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(38px,3.3vw,64px);line-height:0.9;letter-spacing:-0.0125em;color:#E4E2D8">No es una impresora.<br />Es una granja de producción.</h2>
+        <p style="margin:0;font-size:clamp(15px,1vw,19px);line-height:1.75;max-width:52ch;color:#DBDBDB;text-wrap:pretty">Producimos en paralelo con varias máquinas FDM de última generación, con cambio automático de material y multicolor. Una tirada de 300 medallas no tarda 300 veces más que una: sale del taller en días, no en meses.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(120px,18vw,var(--piq-gap,280px)) clamp(20px,4vw,40px) 0">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(48px,6vw,96px);align-items:start">
+      <div>
+        <h2 data-lit="1" style="position:sticky;top:33vh;margin:0;font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(64px,8.3vw,160px);line-height:0.9;letter-spacing:-0.01em;color:#9B9B9B">Principios</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:clamp(80px,10vw,160px);padding-top:clamp(0px,4vw,60px)">
+        <div data-reveal="0" style="transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)">
+          <p style="margin:0 0 16px;font-size:clamp(12px,0.83vw,16px);color:#9B9B9B">01.</p>
+          <h3 style="margin:0 0 20px;font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(28px,2.4vw,44px);line-height:1;letter-spacing:-0.0125em;color:#E4E2D8">Volumen sin renuncias</h3>
+          <p style="margin:0 0 36px;font-size:clamp(15px,1vw,18px);line-height:1.75;max-width:52ch;color:#DBDBDB;text-wrap:pretty">De la pieza única a tiradas de más de 1.000 unidades, con el mismo acabado en la primera y en la última.</p>
+          <p style="margin:0;font-family:'Inter Tight',sans-serif;font-weight:200;font-size:clamp(40px,4vw,80px);line-height:1;color:var(--piq-accent,#E5404E)">1.000+</p>
+          <p style="margin:10px 0 0;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#9B9B9B">UNIDADES POR TIRADA</p>
+        </div>
+        <div data-reveal="0" style="transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)">
+          <p style="margin:0 0 16px;font-size:clamp(12px,0.83vw,16px);color:#9B9B9B">02.</p>
+          <h3 style="margin:0 0 20px;font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(28px,2.4vw,44px);line-height:1;letter-spacing:-0.0125em;color:#E4E2D8">El archivo no caduca</h3>
+          <p style="margin:0 0 36px;font-size:clamp(15px,1vw,18px);line-height:1.75;max-width:52ch;color:#DBDBDB;text-wrap:pretty">El diseño queda guardado. El año que viene repetimos tu pedido idéntico, o lo actualizamos con la nueva fecha.</p>
+          <p style="margin:0;font-family:'Inter Tight',sans-serif;font-weight:200;font-size:clamp(40px,4vw,80px);line-height:1;color:var(--piq-accent,#E5404E)">0 €</p>
+          <p style="margin:10px 0 0;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#9B9B9B">COSTE DE MOLDE O TROQUEL</p>
+        </div>
+        <div data-reveal="0" style="transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)">
+          <p style="margin:0 0 16px;font-size:clamp(12px,0.83vw,16px);color:#9B9B9B">03.</p>
+          <h3 style="margin:0 0 20px;font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(28px,2.4vw,44px);line-height:1;letter-spacing:-0.0125em;color:#E4E2D8">Validas antes de producir</h3>
+          <p style="margin:0 0 36px;font-size:clamp(15px,1vw,18px);line-height:1.75;max-width:52ch;color:#DBDBDB;text-wrap:pretty">Fabricamos un prototipo físico y lo tienes en la mano antes de lanzar la serie completa.</p>
+          <p style="margin:0;font-family:'Inter Tight',sans-serif;font-weight:200;font-size:clamp(40px,4vw,80px);line-height:1;color:var(--piq-accent,#E5404E)">1</p>
+          <p style="margin:10px 0 0;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#9B9B9B">PROTOTIPO ANTES DE LA SERIE</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(120px,18vw,var(--piq-gap,280px)) clamp(20px,4vw,40px) 0">
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:clamp(56px,6vw,96px)">
+      <p style="margin:0 0 20px;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#9B9B9B">El taller · Sueca</p>
+      <h2 data-lit="1" style="margin:0;font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(64px,8.3vw,160px);line-height:0.9;letter-spacing:-0.01em;color:#9B9B9B">Cómo se hace</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:clamp(20px,2.2vw,32px)">
+      <div data-reveal="0" style="transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)">
+        <div data-photo="1" style="position:relative;aspect-ratio:4/5;background:rgba(255,255,255,0.03);border-radius:5px;overflow:hidden;transition:transform 600ms cubic-bezier(.33,1,.68,1);display:flex;align-items:flex-end;padding:16px" style-before="content:'';position:absolute;top:0;left:0;width:8px;height:8px;border-top:1px solid #E4E2D8;border-left:1px solid #E4E2D8" style-after="content:'';position:absolute;bottom:0;right:0;width:8px;height:8px;border-bottom:1px solid #E4E2D8;border-right:1px solid #E4E2D8">
+          <span style="font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:#9B9B9B">pendiente · foto taller</span>
+        </div>
+        <p style="margin:18px 0 8px;font-size:clamp(12px,0.83vw,15px);color:#9B9B9B">01.</p>
+        <h3 style="margin:0 0 10px;font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(22px,1.7vw,30px);line-height:1;color:#E4E2D8">Diseño</h3>
+        <p style="margin:0;font-size:13px;line-height:1.65;color:#9B9B9B;text-wrap:pretty">Modelamos la pieza desde cero. Sin coste de molde ni de troquel.</p>
+      </div>
+      <div data-reveal="1" style="transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)">
+        <div data-photo="1" style="position:relative;aspect-ratio:4/5;background:rgba(255,255,255,0.03);border-radius:5px;overflow:hidden;transition:transform 600ms cubic-bezier(.33,1,.68,1);display:flex;align-items:flex-end;padding:16px" style-before="content:'';position:absolute;top:0;left:0;width:8px;height:8px;border-top:1px solid #E4E2D8;border-left:1px solid #E4E2D8" style-after="content:'';position:absolute;bottom:0;right:0;width:8px;height:8px;border-bottom:1px solid #E4E2D8;border-right:1px solid #E4E2D8">
+          <span style="font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:#9B9B9B">pendiente · foto prototipo</span>
+        </div>
+        <p style="margin:18px 0 8px;font-size:clamp(12px,0.83vw,15px);color:#9B9B9B">02.</p>
+        <h3 style="margin:0 0 10px;font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(22px,1.7vw,30px);line-height:1;color:#E4E2D8">Prototipo</h3>
+        <p style="margin:0;font-size:13px;line-height:1.65;color:#9B9B9B;text-wrap:pretty">Fabricamos una unidad física y la validas antes de la serie.</p>
+      </div>
+      <div data-reveal="2" style="transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)">
+        <div data-photo="1" style="position:relative;aspect-ratio:4/5;background:rgba(255,255,255,0.03);border-radius:5px;overflow:hidden;transition:transform 600ms cubic-bezier(.33,1,.68,1);display:flex;align-items:flex-end;padding:16px" style-before="content:'';position:absolute;top:0;left:0;width:8px;height:8px;border-top:1px solid #E4E2D8;border-left:1px solid #E4E2D8" style-after="content:'';position:absolute;bottom:0;right:0;width:8px;height:8px;border-bottom:1px solid #E4E2D8;border-right:1px solid #E4E2D8">
+          <span style="font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:#9B9B9B">pendiente · foto máquinas</span>
+        </div>
+        <p style="margin:18px 0 8px;font-size:clamp(12px,0.83vw,15px);color:#9B9B9B">03.</p>
+        <h3 style="margin:0 0 10px;font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(22px,1.7vw,30px);line-height:1;color:#E4E2D8">Producción</h3>
+        <p style="margin:0;font-size:13px;line-height:1.65;color:#9B9B9B;text-wrap:pretty">Varias máquinas FDM en paralelo, cambio automático de material y multicolor.</p>
+      </div>
+      <div data-reveal="3" style="transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)">
+        <div data-photo="1" style="position:relative;aspect-ratio:4/5;background:rgba(255,255,255,0.03);border-radius:5px;overflow:hidden;transition:transform 600ms cubic-bezier(.33,1,.68,1);display:flex;align-items:flex-end;padding:16px" style-before="content:'';position:absolute;top:0;left:0;width:8px;height:8px;border-top:1px solid #E4E2D8;border-left:1px solid #E4E2D8" style-after="content:'';position:absolute;bottom:0;right:0;width:8px;height:8px;border-bottom:1px solid #E4E2D8;border-right:1px solid #E4E2D8">
+          <span style="font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:#9B9B9B">pendiente · foto empaquetado</span>
+        </div>
+        <p style="margin:18px 0 8px;font-size:clamp(12px,0.83vw,15px);color:#9B9B9B">04.</p>
+        <h3 style="margin:0 0 10px;font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(22px,1.7vw,30px);line-height:1;color:#E4E2D8">Entrega</h3>
+        <p style="margin:0;font-size:13px;line-height:1.65;color:#9B9B9B;text-wrap:pretty">Empaquetado y envío a toda España. El archivo queda guardado para repetir.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalogo" style="padding:clamp(120px,18vw,var(--piq-gap,280px)) clamp(20px,4vw,40px) 0">
+    <p style="margin:0 0 clamp(40px,5vw,80px);font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#9B9B9B">Catálogo</p>
+
+    <div id="trofeos" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:clamp(32px,4vw,80px);align-items:center;scroll-margin-top:120px">
+      <div data-reveal="0" style="transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)">
+        <p style="margin:0 0 16px;font-size:clamp(12px,0.83vw,16px);color:#9B9B9B">01.</p>
+        <a href="#trofeos" data-arrowlink="1" style="display:inline-flex;align-items:baseline;gap:16px;margin-bottom:24px"><span data-label="1" style="display:inline-block;font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(38px,3.3vw,64px);line-height:0.9;letter-spacing:-0.0125em;color:#E4E2D8;transition:transform 300ms cubic-bezier(.65,0,.35,1)">Trofeos</span><span data-arrow="1" style="display:inline-block;font-size:clamp(18px,1.4vw,26px);opacity:0.4;transition:transform 300ms cubic-bezier(.65,0,.35,1),opacity 300ms cubic-bezier(.65,0,.35,1),color 300ms cubic-bezier(.65,0,.35,1)">↗</span></a>
+        <p style="margin:0;font-size:clamp(15px,1vw,18px);line-height:1.75;max-width:52ch;color:#DBDBDB;text-wrap:pretty">Piezas de podio diseñadas desde cero para tu competición. Geometrías imposibles de moldear, con el escudo del club integrado en la propia pieza.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div data-photo="1" style="position:relative;aspect-ratio:4/5;border-radius:5px;overflow:hidden;filter:saturate(0.85);transition:transform 600ms cubic-bezier(.33,1,.68,1),filter 600ms cubic-bezier(.33,1,.68,1)">
+          <img src="assets/catalogo/trofeos-inicio.webp" alt="Trofeos PIQ3D impresos en 3D" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" />
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(60px,1fr));gap:10px">
+          <div data-photo="1" style="aspect-ratio:4/5;border-radius:4px;overflow:hidden;filter:saturate(0.85);transition:transform 600ms cubic-bezier(.33,1,.68,1),filter 600ms cubic-bezier(.33,1,.68,1)"><img src="assets/catalogo/fibravalencia.webp" alt="Trofeo Fibra Valencia" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+          <div data-photo="1" style="aspect-ratio:4/5;border-radius:4px;overflow:hidden;filter:saturate(0.85);transition:transform 600ms cubic-bezier(.33,1,.68,1),filter 600ms cubic-bezier(.33,1,.68,1)"><img src="assets/catalogo/la-canada.webp" alt="Trofeo La Cañada" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+          <div data-photo="1" style="aspect-ratio:4/5;border-radius:4px;overflow:hidden;filter:saturate(0.85);transition:transform 600ms cubic-bezier(.33,1,.68,1),filter 600ms cubic-bezier(.33,1,.68,1)"><img src="assets/catalogo/condecoracion.webp" alt="Trofeo condecoración" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+          <div data-photo="1" style="aspect-ratio:4/5;border-radius:4px;overflow:hidden;filter:saturate(0.85);transition:transform 600ms cubic-bezier(.33,1,.68,1),filter 600ms cubic-bezier(.33,1,.68,1)"><img src="assets/catalogo/paellas-fallas.webp" alt="Trofeo concurso de paellas, Fallas" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+          <div data-photo="1" style="aspect-ratio:4/5;border-radius:4px;overflow:hidden;filter:saturate(0.85);transition:transform 600ms cubic-bezier(.33,1,.68,1),filter 600ms cubic-bezier(.33,1,.68,1)"><img src="assets/catalogo/3x3xiques.webp" alt="Trofeo 3x3 Xiques" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+          <div data-photo="1" style="aspect-ratio:4/5;border-radius:4px;overflow:hidden;filter:saturate(0.85);transition:transform 600ms cubic-bezier(.33,1,.68,1),filter 600ms cubic-bezier(.33,1,.68,1)"><img src="assets/catalogo/copitas-adesperanza.webp" alt="Copas AD Esperanza" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+          <div data-photo="1" style="aspect-ratio:4/5;border-radius:4px;overflow:hidden;filter:saturate(0.85);transition:transform 600ms cubic-bezier(.33,1,.68,1),filter 600ms cubic-bezier(.33,1,.68,1)"><img src="assets/catalogo/futsal-mejor-jugador.webp" alt="Trofeo futsal mejor jugador" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+          <div data-photo="1" style="aspect-ratio:4/5;border-radius:4px;overflow:hidden;filter:saturate(0.85);transition:transform 600ms cubic-bezier(.33,1,.68,1),filter 600ms cubic-bezier(.33,1,.68,1)"><img src="assets/catalogo/futsal-sueca.webp" alt="Trofeo futsal Sueca" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+          <div data-photo="1" style="aspect-ratio:4/5;border-radius:4px;overflow:hidden;filter:saturate(0.85);transition:transform 600ms cubic-bezier(.33,1,.68,1),filter 600ms cubic-bezier(.33,1,.68,1)"><img src="assets/catalogo/luis-vives.webp" alt="Reconocimiento para los participantes, Luis Vives" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="medallas" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:clamp(32px,4vw,80px);align-items:center;margin-top:clamp(90px,12vw,200px);scroll-margin-top:120px">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div data-photo="1" style="position:relative;aspect-ratio:4/5;border-radius:5px;overflow:hidden;filter:saturate(0.85);transition:transform 600ms cubic-bezier(.33,1,.68,1),filter 600ms cubic-bezier(.33,1,.68,1)">
+          <img src="assets/medallas/ch-sueca.jpeg" alt="Medallas Club de Ajedrez Sueca" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" />
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(60px,1fr));gap:10px">
+          <div data-photo="1" style="aspect-ratio:4/5;border-radius:4px;overflow:hidden;filter:saturate(0.85);transition:transform 600ms cubic-bezier(.33,1,.68,1),filter 600ms cubic-bezier(.33,1,.68,1)"><img src="assets/medallas/ajedrez-sueca.jpeg" alt="Medallas de ajedrez, Sueca" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+          <div data-photo="1" style="aspect-ratio:4/5;border-radius:4px;overflow:hidden;filter:saturate(0.85);transition:transform 600ms cubic-bezier(.33,1,.68,1),filter 600ms cubic-bezier(.33,1,.68,1)"><img src="assets/medallas/sense-limits.jpeg" alt="Medallas Sense Límits" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+          <div data-photo="1" style="aspect-ratio:4/5;border-radius:4px;overflow:hidden;filter:saturate(0.85);transition:transform 600ms cubic-bezier(.33,1,.68,1),filter 600ms cubic-bezier(.33,1,.68,1)"><img src="assets/medallas/valencia-xiques-reverso.jpg" alt="Medalla Valencia Xiques, reverso" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+        </div>
+      </div>
+      <div data-reveal="0" style="transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)">
+        <p style="margin:0 0 16px;font-size:clamp(12px,0.83vw,16px);color:#9B9B9B">02.</p>
+        <a href="#medallas" data-arrowlink="1" style="display:inline-flex;align-items:baseline;gap:16px;margin-bottom:24px"><span data-label="1" style="display:inline-block;font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(38px,3.3vw,64px);line-height:0.9;letter-spacing:-0.0125em;color:#E4E2D8;transition:transform 300ms cubic-bezier(.65,0,.35,1)">Medallas</span><span data-arrow="1" style="display:inline-block;font-size:clamp(18px,1.4vw,26px);opacity:0.4;transition:transform 300ms cubic-bezier(.65,0,.35,1),opacity 300ms cubic-bezier(.65,0,.35,1),color 300ms cubic-bezier(.65,0,.35,1)">↗</span></a>
+        <p style="margin:0;font-size:clamp(15px,1vw,18px);line-height:1.75;max-width:52ch;color:#DBDBDB;text-wrap:pretty">Tiradas de decenas a miles de unidades con acabado idéntico en toda la serie. Multicolor sin pintar a mano.</p>
+      </div>
+    </div>
+
+    <div id="merch" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:clamp(32px,4vw,80px);align-items:center;margin-top:clamp(90px,12vw,200px);scroll-margin-top:120px">
+      <div data-reveal="0" style="transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)">
+        <p style="margin:0 0 16px;font-size:clamp(12px,0.83vw,16px);color:#9B9B9B">03.</p>
+        <a href="#merch" data-arrowlink="1" style="display:inline-flex;align-items:baseline;gap:16px;margin-bottom:24px"><span data-label="1" style="display:inline-block;font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(38px,3.3vw,64px);line-height:0.9;letter-spacing:-0.0125em;color:#E4E2D8;transition:transform 300ms cubic-bezier(.65,0,.35,1)">Merch</span><span data-arrow="1" style="display:inline-block;font-size:clamp(18px,1.4vw,26px);opacity:0.4;transition:transform 300ms cubic-bezier(.65,0,.35,1),opacity 300ms cubic-bezier(.65,0,.35,1),color 300ms cubic-bezier(.65,0,.35,1)">↗</span></a>
+        <p style="margin:0;font-size:clamp(15px,1vw,18px);line-height:1.75;max-width:52ch;color:#DBDBDB;text-wrap:pretty">Llaveros, imanes, señalética y soportes personalizados para clubes, comisiones y hostelería.</p>
+      </div>
+      <div data-photo="1" style="position:relative;aspect-ratio:4/5;background:rgba(255,255,255,0.03);border-radius:5px;overflow:hidden;transition:transform 600ms cubic-bezier(.33,1,.68,1);display:flex;align-items:flex-end;padding:18px" style-before="content:'';position:absolute;top:0;left:0;width:8px;height:8px;border-top:1px solid #E4E2D8;border-left:1px solid #E4E2D8" style-after="content:'';position:absolute;bottom:0;right:0;width:8px;height:8px;border-bottom:1px solid #E4E2D8;border-right:1px solid #E4E2D8">
+        <span style="font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:#9B9B9B">pendiente · foto merch</span>
+      </div>
+    </div>
+
+    <div id="qrnfc" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:clamp(32px,4vw,80px);align-items:center;margin-top:clamp(90px,12vw,200px);scroll-margin-top:120px">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div data-photo="1" style="position:relative;aspect-ratio:4/5;border-radius:5px;overflow:hidden;filter:saturate(0.85);transition:transform 600ms cubic-bezier(.33,1,.68,1),filter 600ms cubic-bezier(.33,1,.68,1)">
+          <img src="assets/qr/sushiroom.jpeg" alt="Carta con QR y NFC para Sushi Room" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" />
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(60px,1fr));gap:10px">
+          <div data-photo="1" style="aspect-ratio:4/5;border-radius:4px;overflow:hidden;filter:saturate(0.85);transition:transform 600ms cubic-bezier(.33,1,.68,1),filter 600ms cubic-bezier(.33,1,.68,1)"><img src="assets/qr/cocobeach.jpeg" alt="Carta QR + NFC para Coco Beach" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+          <div data-photo="1" style="aspect-ratio:4/5;border-radius:4px;overflow:hidden;filter:saturate(0.85);transition:transform 600ms cubic-bezier(.33,1,.68,1),filter 600ms cubic-bezier(.33,1,.68,1)"><img src="assets/qr/el-niu.jpeg" alt="Carta QR + NFC para Restaurante El Niu" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+          <div data-photo="1" style="aspect-ratio:4/5;border-radius:4px;overflow:hidden;filter:saturate(0.85);transition:transform 600ms cubic-bezier(.33,1,.68,1),filter 600ms cubic-bezier(.33,1,.68,1)"><img src="assets/qr/ca-quintin.jpeg" alt="Carta QR + NFC para Restaurante Ca Quintín" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" /></div>
+        </div>
+      </div>
+      <div data-reveal="0" style="transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)">
+        <p style="margin:0 0 16px;font-size:clamp(12px,0.83vw,16px);color:#9B9B9B">04.</p>
+        <a href="#qrnfc" data-arrowlink="1" style="display:inline-flex;align-items:baseline;gap:16px;margin-bottom:24px"><span data-label="1" style="display:inline-block;font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(38px,3.3vw,64px);line-height:0.9;letter-spacing:-0.0125em;color:#E4E2D8;transition:transform 300ms cubic-bezier(.65,0,.35,1)">QR + NFC</span><span data-arrow="1" style="display:inline-block;font-size:clamp(18px,1.4vw,26px);opacity:0.4;transition:transform 300ms cubic-bezier(.65,0,.35,1),opacity 300ms cubic-bezier(.65,0,.35,1),color 300ms cubic-bezier(.65,0,.35,1)">↗</span></a>
+        <p style="margin:0;font-size:clamp(15px,1vw,18px);line-height:1.75;max-width:52ch;color:#DBDBDB;text-wrap:pretty">Cartas y placas con QR y chip NFC integrados. El cliente escanea y accede a tu carta, tu web o tus redes sin instalar nada.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="valoraciones" style="padding:clamp(120px,18vw,var(--piq-gap,280px)) clamp(20px,4vw,40px) 0;scroll-margin-top:120px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(40px,5vw,80px);align-items:end;margin-bottom:clamp(56px,6vw,96px)">
+      <div>
+        <p style="margin:0 0 20px;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#9B9B9B">Valoraciones</p>
+        <h2 data-lit="1" style="margin:0;font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(64px,8.3vw,160px);line-height:0.9;letter-spacing:-0.01em;color:#9B9B9B">Quién lo usa</h2>
+      </div>
+      <div data-reveal="1" style="display:flex;flex-direction:column;gap:8px;transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)">
+        <p style="margin:0;font-family:'Inter Tight',sans-serif;font-weight:200;font-size:clamp(40px,4vw,80px);line-height:1;color:var(--piq-accent,#E5404E)">5,0</p>
+        <p style="margin:0;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#9B9B9B">MEDIA EN GOOGLE · <span style="color:#CCA669">nº de reseñas pendiente</span></p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(20px,2.2vw,32px)">
+      <blockquote data-reveal="0" style="position:relative;margin:0;padding:clamp(24px,2.4vw,36px);background:rgba(255,255,255,0.03);border-radius:5px;display:flex;flex-direction:column;justify-content:space-between;gap:36px;min-height:clamp(260px,22vw,340px);transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)" style-before="content:'';position:absolute;top:0;left:0;width:8px;height:8px;border-top:1px solid #E4E2D8;border-left:1px solid #E4E2D8" style-after="content:'';position:absolute;bottom:0;right:0;width:8px;height:8px;border-bottom:1px solid #E4E2D8;border-right:1px solid #E4E2D8">
+        <p style="margin:0;font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(20px,1.7vw,30px);line-height:1.25;letter-spacing:-0.01em;color:#E4E2D8;text-wrap:pretty">«pendiente · pega aquí la valoración del cliente»</p>
+        <footer style="display:flex;flex-direction:column;gap:6px">
+          <span style="font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#E4E2D8">01. Club deportivo</span>
+          <span style="font-size:11px;letter-spacing:0.06em;color:#9B9B9B">nombre y pedido · pendiente</span>
+        </footer>
+      </blockquote>
+      <blockquote data-reveal="1" style="position:relative;margin:0;padding:clamp(24px,2.4vw,36px);background:rgba(255,255,255,0.03);border-radius:5px;display:flex;flex-direction:column;justify-content:space-between;gap:36px;min-height:clamp(260px,22vw,340px);transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)" style-before="content:'';position:absolute;top:0;left:0;width:8px;height:8px;border-top:1px solid #E4E2D8;border-left:1px solid #E4E2D8" style-after="content:'';position:absolute;bottom:0;right:0;width:8px;height:8px;border-bottom:1px solid #E4E2D8;border-right:1px solid #E4E2D8">
+        <p style="margin:0;font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(20px,1.7vw,30px);line-height:1.25;letter-spacing:-0.01em;color:#E4E2D8;text-wrap:pretty">«pendiente · pega aquí la valoración del cliente»</p>
+        <footer style="display:flex;flex-direction:column;gap:6px">
+          <span style="font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#E4E2D8">02. Comisión o ayuntamiento</span>
+          <span style="font-size:11px;letter-spacing:0.06em;color:#9B9B9B">nombre y pedido · pendiente</span>
+        </footer>
+      </blockquote>
+      <blockquote data-reveal="2" style="position:relative;margin:0;padding:clamp(24px,2.4vw,36px);background:rgba(255,255,255,0.03);border-radius:5px;display:flex;flex-direction:column;justify-content:space-between;gap:36px;min-height:clamp(260px,22vw,340px);transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)" style-before="content:'';position:absolute;top:0;left:0;width:8px;height:8px;border-top:1px solid #E4E2D8;border-left:1px solid #E4E2D8" style-after="content:'';position:absolute;bottom:0;right:0;width:8px;height:8px;border-bottom:1px solid #E4E2D8;border-right:1px solid #E4E2D8">
+        <p style="margin:0;font-family:'Inter Tight',sans-serif;font-weight:300;font-size:clamp(20px,1.7vw,30px);line-height:1.25;letter-spacing:-0.01em;color:#E4E2D8;text-wrap:pretty">«pendiente · pega aquí la valoración del cliente»</p>
+        <footer style="display:flex;flex-direction:column;gap:6px">
+          <span style="font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#E4E2D8">03. Hostelería · QR + NFC</span>
+          <span style="font-size:11px;letter-spacing:0.06em;color:#9B9B9B">nombre y pedido · pendiente</span>
+        </footer>
+      </blockquote>
+    </div>
+
+    <p data-reveal="0" style="margin:clamp(32px,3vw,48px) 0 0;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#9B9B9B;transition:opacity 0.9s cubic-bezier(.16,1,.3,1),transform 0.9s cubic-bezier(.16,1,.3,1)">Piezas entregadas a CH Sueca · AD Esperanza · Fibra Valencia · La Cañada · Luis Vives · Coco Beach · Ca Quintín · El Niu · Sushi Room</p>
+  </section>
+
+  <footer id="contacto" style="margin-top:clamp(120px,18vw,var(--piq-gap,280px));padding:clamp(40px,5vw,72px) clamp(20px,4vw,40px) clamp(28px,3vw,40px);border-top:1px solid rgba(228,226,216,0.14);scroll-margin-top:0">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:clamp(32px,4vw,64px);align-items:start">
+      <div>
+        <p style="margin:0;font-family:'Inter Tight',sans-serif;font-weight:200;font-size:clamp(56px,7vw,120px);line-height:0.85;letter-spacing:-0.02em;color:#E4E2D8">PIQ3D</p>
+        <p style="margin:18px 0 0;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#9B9B9B">Taller propio · Sueca, Comunitat Valenciana</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <a href="#contacto" data-underline="1" style="position:relative;align-self:flex-start;overflow:hidden;padding-bottom:4px;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#9B9B9B">AVISO LEGAL<span data-ul="1" style="position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(228,226,216,0.3);transform:translateX(-101%);transition:transform 300ms cubic-bezier(.65,0,.35,1)"></span></a>
+        <a href="#contacto" data-underline="1" style="position:relative;align-self:flex-start;overflow:hidden;padding-bottom:4px;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#9B9B9B">PRIVACIDAD<span data-ul="1" style="position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(228,226,216,0.3);transform:translateX(-101%);transition:transform 300ms cubic-bezier(.65,0,.35,1)"></span></a>
+        <a href="#contacto" data-underline="1" style="position:relative;align-self:flex-start;overflow:hidden;padding-bottom:4px;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:#9B9B9B">COOKIES<span data-ul="1" style="position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(228,226,216,0.3);transform:translateX(-101%);transition:transform 300ms cubic-bezier(.65,0,.35,1)"></span></a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+        <a href="#contacto" data-arrowlink="1" style="display:flex;gap:8px;align-items:center;font-size:12px;letter-spacing:0.06em;color:#E4E2D8"><span data-label="1" style="display:inline-block;transition:transform 300ms cubic-bezier(.65,0,.35,1)">@piq3d</span><span data-arrow="1" style="display:inline-block;opacity:0.4;transition:transform 300ms cubic-bezier(.65,0,.35,1),opacity 300ms cubic-bezier(.65,0,.35,1),color 300ms cubic-bezier(.65,0,.35,1)">↗</span></a>
+        <a href="#contacto" data-arrowlink="1" style="display:flex;gap:8px;align-items:center;font-size:12px;letter-spacing:0.06em;color:#E4E2D8"><span data-label="1" style="display:inline-block;transition:transform 300ms cubic-bezier(.65,0,.35,1)">piq3d.com</span><span data-arrow="1" style="display:inline-block;opacity:0.4;transition:transform 300ms cubic-bezier(.65,0,.35,1),opacity 300ms cubic-bezier(.65,0,.35,1),color 300ms cubic-bezier(.65,0,.35,1)">↗</span></a>
+        <p style="margin:6px 0 0;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#9B9B9B">Email y teléfono: pendiente</p>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:clamp(48px,5vw,80px);padding-top:14px;border-top:1px solid rgba(228,226,216,0.14);font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#9B9B9B">
+      <span>PIQ3D © 2026</span>
+      <a href="#top" data-arrowlink="1" style="display:flex;gap:8px;align-items:center;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#E4E2D8"><span data-label="1" style="display:inline-block;transition:transform 300ms cubic-bezier(.65,0,.35,1)">BACK TO TOP</span><span data-arrow="1" style="display:inline-block;opacity:0.4;transition:transform 300ms cubic-bezier(.65,0,.35,1),opacity 300ms cubic-bezier(.65,0,.35,1),color 300ms cubic-bezier(.65,0,.35,1)">↑</span></a>
+    </div>
+  </footer>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#E5404E&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#E5404E&quot;,&quot;#CCA669&quot;,&quot;#E4E2D8&quot;],&quot;section&quot;:&quot;Sistema&quot;},&quot;grain&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.09,&quot;min&quot;:0,&quot;max&quot;:0.2,&quot;step&quot;:0.01,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Sistema&quot;},&quot;blockGap&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:280,&quot;min&quot;:120,&quot;max&quot;:360,&quot;step&quot;:10,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Sistema&quot;}}">
+class Component extends DCLogic {
+  applyVars() {
+    const r = document.documentElement.style;
+    const a = this.props.accent;
+    if (a) r.setProperty('--piq-accent', a);
+    const g = this.props.grain;
+    if (g !== undefined && g !== null) r.setProperty('--piq-grain', String(g));
+    const gap = this.props.blockGap;
+    if (gap) r.setProperty('--piq-gap', gap + 'px');
+    this.accent = a || '#E5404E';
+  }
+
+  componentDidUpdate() { this.applyVars(); }
+
+  componentDidMount() {
+    this.applyVars();
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const q = (s) => Array.from(document.querySelectorAll(s));
+    this.cleanups = [];
+
+    // H1 word intro
+    const words = q('[data-word]');
+    if (reduced) {
+      words.forEach(w => { w.style.transition = 'opacity 150ms linear'; w.style.opacity = '1'; w.style.transform = 'none'; });
+    } else {
+      requestAnimationFrame(() => words.forEach(w => { w.style.opacity = '1'; w.style.transform = 'translateY(0)'; }));
+    }
+
+    // Scroll reveals
+    const reveals = q('[data-reveal]');
+    if (reduced) {
+      reveals.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
+    } else {
+      const vh = window.innerHeight;
+      const pending = reveals.filter(el => el.getBoundingClientRect().top > vh * 0.85);
+      pending.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(24px)'; });
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.boundingClientRect.top < window.innerHeight * 0.85) {
+            const d = (parseInt(e.target.dataset.reveal, 10) || 0) * 80;
+            setTimeout(() => { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; }, d);
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0 });
+      pending.forEach(el => io.observe(el));
+      this.cleanups.push(() => io.disconnect());
+    }
+
+    // Nav active state
+    const navLinks = q('[data-nav]');
+    const sectionFor = {};
+    navLinks.forEach(l => { const el = document.getElementById(l.dataset.nav); if (el) sectionFor[l.dataset.nav] = el; });
+    const setActive = (id) => navLinks.forEach(l => {
+      const on = l.dataset.nav === id;
+      l.style.color = on ? this.accent : '#9B9B9B';
+      const ul = l.querySelector('[data-ul]');
+      if (ul) { ul.style.transform = on ? 'translateX(0)' : 'translateX(-101%)'; ul.style.background = on ? this.accent : 'rgba(228,226,216,0.3)'; }
+    });
+    const navIo = new IntersectionObserver((entries) => {
+      const vis = entries.filter(e => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+      if (vis) setActive(vis.target.id);
+    }, { threshold: 0.35 });
+    Object.values(sectionFor).forEach(el => navIo.observe(el));
+    this.cleanups.push(() => navIo.disconnect());
+
+    // Underline hover
+    q('[data-underline]').forEach(l => {
+      const ul = l.querySelector('[data-ul]');
+      if (!ul) return;
+      const enter = () => { if (l.style.color !== this.accent) ul.style.transform = 'translateX(0)'; };
+      const leave = () => { const on = l.style.color === this.accent; if (!on) ul.style.transform = 'translateX(-101%)'; };
+      l.addEventListener('mouseenter', enter); l.addEventListener('mouseleave', leave);
+      l.addEventListener('focus', enter); l.addEventListener('blur', leave);
+    });
+
+    // Arrow links
+    q('[data-arrowlink]').forEach(l => {
+      const label = l.querySelector('[data-label]');
+      const arrow = l.querySelector('[data-arrow]');
+      const enter = () => {
+        if (label) label.style.transform = 'translateX(4px)';
+        if (arrow) { arrow.style.transform = 'translateX(8px)'; arrow.style.opacity = '1'; arrow.style.color = this.accent; }
+      };
+      const leave = () => {
+        if (label) label.style.transform = 'translateX(0)';
+        if (arrow) { arrow.style.transform = 'translateX(0)'; arrow.style.opacity = '0.4'; arrow.style.color = 'inherit'; }
+      };
+      l.addEventListener('mouseenter', enter); l.addEventListener('mouseleave', leave);
+      l.addEventListener('focus', enter); l.addEventListener('blur', leave);
+    });
+
+    // Photo hover
+    q('[data-photo]').forEach(el => {
+      const hasImg = !!el.querySelector('img');
+      el.addEventListener('mouseenter', () => {
+        el.style.transform = 'scale(1.03)';
+        if (hasImg) el.style.filter = 'saturate(1)'; else el.style.background = 'rgba(255,255,255,0.05)';
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = 'scale(1)';
+        if (hasImg) el.style.filter = 'saturate(0.85)'; else el.style.background = 'rgba(255,255,255,0.03)';
+      });
+    });
+
+    if (reduced) return;
+
+    // Scroll-driven: wordmark spacing, hero parallax, title ignition
+    const wm = q('[data-wm]');
+    const lits = q('[data-lit]');
+    const heroImg = document.querySelector('[data-hero-img]');
+    const center = (wm.length - 1) / 2;
+    let target = 0, cur = 0, raf = 0;
+
+    const read = () => { target = Math.min(1, (window.scrollY || 0) / 600); };
+    const frame = () => {
+      cur += (target - cur) * 0.12;
+      const k = 1 - cur;
+      wm.forEach((el, i) => { el.style.transform = 'translateX(' + (-(i - center) * 0.35 * k).toFixed(4) + 'em)'; });
+      if (heroImg) {
+        const p = Math.min(1, Math.max(0, (window.scrollY || 0) / window.innerHeight));
+        heroImg.style.transform = 'scale(' + (1 + p * 0.08).toFixed(4) + ') translateY(' + (p * 60).toFixed(1) + 'px)';
+      }
+      const vh = window.innerHeight;
+      lits.forEach(el => {
+        const r = el.getBoundingClientRect();
+        const start = vh, end = vh / 2 - r.height / 2;
+        let p = (start - r.top) / Math.max(1, start - end);
+        p = Math.min(1, Math.max(0, p));
+        const c = [155 + (228 - 155) * p, 155 + (226 - 155) * p, 155 + (216 - 155) * p];
+        const a = 0.25 + 0.75 * p;
+        el.style.color = 'rgba(' + c.map(v => Math.round(v)).join(',') + ',' + a.toFixed(3) + ')';
+      });
+      raf = requestAnimationFrame(frame);
+    };
+    read(); frame();
+    window.addEventListener('scroll', read, { passive: true });
+    window.addEventListener('resize', read);
+    this.cleanups.push(() => { cancelAnimationFrame(raf); window.removeEventListener('scroll', read); window.removeEventListener('resize', read); });
+  }
+
+  componentWillUnmount() { (this.cleanups || []).forEach(f => f()); }
+
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

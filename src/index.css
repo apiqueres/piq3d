@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg:       #151515;  /* fondo global */
+  --color-bone:     #E4E2D8;  /* texto principal, "crema" */
+  --color-bone-2:   #DBDBDB;  /* texto secundario */
+  --color-midgray:  #9B9B9B;  /* labels, índices, nav inactivo */
+  --color-red-deep: #8B151E;  /* rojo de marca medido en la pieza real — nunca en texto */
+  --color-red:      #E5404E;  /* ACENTO UI — 4.50:1 sobre el fondo */
+  --color-sand:     #CCA669;  /* amarillo del logo — 8.02:1 sobre el fondo */
+
+  --font-display: "Inter Tight", system-ui, sans-serif;
+  --font-ui:      "Inter", system-ui, sans-serif;
+  --font-mono:    "Space Mono", ui-monospace, monospace;
+
+  --ease-reveal: cubic-bezier(.16, 1, .3, 1);
+  --ease-ui:     cubic-bezier(.65, 0, .35, 1);
+  --ease-photo:  cubic-bezier(.33, 1, .68, 1);
+}
+
+/* Base va en @layer base: sin capa, estas reglas ganarían a las utilidades
+   de Tailwind (lo no-capado siempre vence a lo capado). */
+@layer base {
+  html {
+    background: var(--color-bg);
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    background: var(--color-bg);
+    color: var(--color-bone);
+    font-family: var(--font-mono);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ::selection {
+    background: var(--color-red);
+    color: var(--color-bg);
+  }
+}
+
+/* Marcas de esquina de 8×8 px en vez de borde completo. */
+.corner-marks { position: relative; }
+.corner-marks::before,
+.corner-marks::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+}
+.corner-marks::before {
+  top: 0;
+  left: 0;
+  border-top: 1px solid var(--color-bone);
+  border-left: 1px solid var(--color-bone);
+}
+.corner-marks::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1px solid var(--color-bone);
+  border-right: 1px solid var(--color-bone);
+}
