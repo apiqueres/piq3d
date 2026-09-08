@@ -21,8 +21,8 @@ export const NAV = [
 
 export const HERO = {
   headline: [
-    ['Del', 'archivo'],
-    ['al', 'podio.'],
+    ['Que', 'se', 'note'],
+    ['quién', 'ganó.'],
   ],
   aside:
     'Trofeos, medallas, merch y cartas QR en impresión 3D FDM con materiales biodegradables.',
