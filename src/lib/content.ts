@@ -42,9 +42,9 @@ export const ABOUT = {
   first: {
     index: '01.',
     title: 'Qué hacemos',
-    body: 'Diseñamos y fabricamos la pieza completa, del boceto al empaquetado. Sin intermediarios y sin costes de utillaje.',
+    body: 'Diseñamos y fabricamos la pieza completa, del boceto al empaquetado. Sin intermediarios.',
     bullets: [
-      'Diseño 3D propio incluido en el presupuesto, sin coste de molde ni de troquel.',
+      'Diseño 3D propio incluido en el presupuesto, sin coste añadido.',
       'Escudos, logos, nombres y fechas grabados en la propia pieza.',
       'Entrega en toda España.',
     ],
@@ -71,7 +71,7 @@ export const PRINCIPLES = {
       title: 'El archivo no caduca',
       body: 'El diseño queda guardado. El año que viene repetimos tu pedido idéntico, o lo actualizamos con la nueva fecha.',
       figure: '0 €',
-      caption: 'COSTE DE MOLDE O TROQUEL',
+      caption: 'COSTE POR REPETIR EL DISEÑO',
     },
     {
       index: '03.',
@@ -97,7 +97,7 @@ export const WORKSHOP: { label: string; title: string; steps: Step[] } = {
     {
       index: '01.',
       title: 'Diseño',
-      body: 'Modelamos la pieza desde cero. Sin coste de molde ni de troquel.',
+      body: 'Modelamos la pieza desde cero, con el diseño incluido en el presupuesto.',
       media: {
         kind: 'video',
         src: 'taller/diseno.mp4',
@@ -140,11 +140,24 @@ export const WORKSHOP: { label: string; title: string; steps: Step[] } = {
   ],
 };
 
+/**
+ * Ancla de precio por familia. Existe para que un club con presupuesto cerrado
+ * sepa si estamos en su rango ANTES de escribir por WhatsApp: filtra tanto al
+ * que nos cree un souvenir barato como al que nos cree inalcanzables.
+ */
+export type Price = {
+  /** La cifra, legible de un vistazo. */
+  from: string;
+  /** La condición que sostiene esa cifra: volumen, tamaño o mínimo de pedido. */
+  note: string;
+};
+
 export type Category = {
   id: string;
   index: string;
   title: string;
   body: string;
+  price: Price;
   lead: Photo;
   thumbs: Photo[];
 };
@@ -155,6 +168,10 @@ export const CATALOG: Category[] = [
     index: '01.',
     title: 'Trofeos',
     body: 'Piezas de podio diseñadas desde cero para tu competición. Geometrías imposibles de moldear, con el escudo del club integrado en la propia pieza.',
+    price: {
+      from: 'Desde 16 € por trofeo',
+      note: 'Referencia para una pieza de 28-30 cm. La altura y la complejidad del diseño mueven el precio; el modelado 3D va siempre incluido.',
+    },
     lead: { src: 'img/trofeos/trofeos-inicio.webp', alt: 'Trofeos PIQ3D impresos en 3D' },
     thumbs: [
       { src: 'img/trofeos/fibravalencia.webp', alt: 'Trofeo Fibra Valencia' },
@@ -173,6 +190,10 @@ export const CATALOG: Category[] = [
     index: '02.',
     title: 'Medallas',
     body: 'Tiradas de decenas a miles de unidades con acabado idéntico en toda la serie. Multicolor sin pintar a mano.',
+    price: {
+      from: 'De 1,10 € a 2,50 € por medalla',
+      note: 'El precio lo marca la tirada: 2,50 € en series cortas de 10 a 100 medallas y 1,10 € a partir de 1.000 unidades. Entre medias te lo ajustamos.',
+    },
     lead: {
       src: 'img/medallas/valencia-xiques.webp',
       alt: 'Medalla del Valencia Xiques 3x3, anverso, colgada frente al mar',
@@ -189,6 +210,10 @@ export const CATALOG: Category[] = [
     index: '03.',
     title: 'Merch',
     body: 'Llaveros, imanes, señalética y soportes personalizados para clubes, comisiones y hostelería.',
+    price: {
+      from: 'Precio a medida',
+      note: 'Llaveros, imanes, pins, figuritas y señalética parten de tamaños y tiradas muy distintos. Cuéntanos la idea y te la presupuestamos.',
+    },
     lead: { src: 'img/merch/llaveros-club.webp', alt: 'Llaveros personalizados con el escudo del club' },
     thumbs: [
       { src: 'img/merch/figuritas.webp', alt: 'Figuritas impresas en 3D' },
@@ -203,6 +228,10 @@ export const CATALOG: Category[] = [
     index: '04.',
     title: 'QR + NFC',
     body: 'Cartas y placas con QR y chip NFC integrados. El cliente escanea y accede a tu carta, tu web o tus redes sin instalar nada.',
+    price: {
+      from: 'Desde 6 € por soporte',
+      note: 'Pedido mínimo de 15 unidades. El chip NFC va incluido en el precio; el diseño de la pieza es lo que lo mueve.',
+    },
     lead: { src: 'img/qr/sushiroom.webp', alt: 'Carta con QR y NFC para Sushi Room' },
     thumbs: [
       { src: 'img/qr/cocobeach.webp', alt: 'Carta QR + NFC para Coco Beach' },
@@ -211,6 +240,10 @@ export const CATALOG: Category[] = [
     ],
   },
 ];
+
+/** Va una sola vez al pie del catálogo: matiza las cuatro anclas de golpe. */
+export const PRICING_NOTE =
+  'Precios orientativos con IVA incluido. El presupuesto final depende del tamaño, el acabado y las unidades, y te lo cerramos por escrito antes de producir nada.';
 
 /**
  * No son citas de clientes: son las tres cosas que los clientes repiten, escritas

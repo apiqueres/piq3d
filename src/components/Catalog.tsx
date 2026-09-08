@@ -1,5 +1,5 @@
 import type { Category } from '../lib/content';
-import { CATALOG, asImages } from '../lib/content';
+import { CATALOG, PRICING_NOTE, asImages } from '../lib/content';
 import { ArrowLink } from './links';
 import { MediaCard } from './MediaCard';
 import { Reveal, Stagger, StaggerItem } from './Reveal';
@@ -21,6 +21,15 @@ function Copy({ item }: { item: Category }) {
       <p className="m-0 max-w-[52ch] font-mono text-[clamp(15px,1vw,18px)] leading-[1.75] text-pretty text-bone-2">
         {item.body}
       </p>
+      {/* El ancla va pegada a la pieza, donde se toma la decisión de escribir. */}
+      <div className="mt-7 max-w-[52ch] border-t border-bone/15 pt-5">
+        <p className="m-0 font-mono text-[clamp(15px,1vw,18px)] leading-[1.3] text-bone">
+          {item.price.from}
+        </p>
+        <p className="m-0 mt-2.5 font-mono text-[13px] leading-[1.7] text-pretty text-midgray">
+          {item.price.note}
+        </p>
+      </div>
     </Reveal>
   );
 }
@@ -90,6 +99,10 @@ export function Catalog() {
           </Grid32>
         );
       })}
+
+      <p className="m-0 mt-[clamp(56px,7vw,110px)] max-w-[62ch] font-mono text-[13px] leading-[1.7] text-pretty text-midgray">
+        {PRICING_NOTE}
+      </p>
     </Section>
   );
 }
